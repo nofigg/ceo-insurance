@@ -1,14 +1,29 @@
 # CEO Insurance
 
-A modern web application for insurance management and analytics.
+A modern web application showcasing El Paso's top insurance benefit providers, helping users discover and compare the best insurance and benefit coverage options in the area.
 
 ## 🚀 Live Demo
 Visit the live application at: [https://ceo-insurance.vercel.app](https://ceo-insurance.vercel.app)
 
+## ✨ Features
+
+- Modern, responsive UI built with Tailwind CSS
+- Server-side rendered pages with Next.js
+- Accessible components using shadcn/ui and Radix UI primitives
+- Insurance provider comparison tools
+- Agent connection system
+- Dark mode support
+
 ## 🛠️ Tech Stack
-- Next.js
-- TypeScript
-- Vercel (Hosting & Deployment)
+
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Form Handling:** React Hook Form
+- **Validation:** Zod
 
 ## 📦 Installation
 
@@ -28,8 +43,47 @@ npm install
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🔧 Configuration
+
+The project uses several configuration files:
+
+- `tailwind.config.js` - Tailwind CSS configuration
+- `components.json` - shadcn/ui components configuration
+- `tsconfig.json` - TypeScript configuration
+
+## 📁 Project Structure
+
+```
+ceo-insurance/
+├── app/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── ui/
+│       ├── badge.tsx
+│       ├── button.tsx
+│       ├── card.tsx
+│       └── ...
+├── lib/
+│   └── utils.ts
+└── public/
+```
+
 ## 🔄 Deployment
-The application is automatically deployed to Vercel when changes are pushed to the main branch.
+
+The application is automatically deployed to Vercel when changes are pushed to the main branch. The deployment process includes:
+
+1. Automatic build optimization
+2. Edge network distribution
+3. Serverless functions
+4. Environment variable management
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
+
 MIT License
