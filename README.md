@@ -3,7 +3,7 @@
 A modern web application showcasing El Paso's top insurance benefit providers, helping users discover and compare the best insurance and benefit coverage options in the area.
 
 ## 🚀 Live Demo
-Visit the live application at: [https://v0-ceo-insurance-jm044mfqohd-cr7n3knxc-nofigg.vercel.app](https://v0-ceo-insurance-jm044mfqohd-cr7n3knxc-nofigg.vercel.app)
+Visit the live application at: [https://www.ceo-insurance.com](https://www.ceo-insurance.com)
 
 ## ✨ Features
 
