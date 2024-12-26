@@ -1,42 +1,38 @@
 # CEO Insurance
 
-A modern web application showcasing El Paso's top insurance benefit providers, helping users discover and compare the best insurance and benefit coverage options in the area.
+A modern insurance comparison and benefits platform built with Next.js 13, React, and Tailwind CSS.
 
-## 🚀 Live Demo
-Visit the live application at: [https://www.ceo-insurance.com](https://www.ceo-insurance.com)
+## Features
 
-## ✨ Features
+- **Insurance Provider Comparison**: Compare top insurance providers including Fidelity & Guaranty, American National, National Life Group, Foresters Financial, and Mutual of Omaha.
+- **Comprehensive Benefit Guides**: Access detailed guides covering life insurance, annuities, living benefits, asset protection, and retirement planning.
+- **Modern UI/UX**: Clean, responsive design with smooth scrolling and intuitive navigation.
+- **Mobile-First Design**: Fully responsive layout that works seamlessly across all devices.
 
-- Modern, responsive UI built with Tailwind CSS
-- Server-side rendered pages with Next.js
-- Accessible components using shadcn/ui and Radix UI primitives
-- Insurance provider comparison with ranking system
-- Detailed provider cards with ratings and features
-- Interactive "See Plans" functionality
-- Agent connection system
-- Dark mode support
+## Key Sections
 
-## 🛠️ Tech Stack
+1. **Insurance Providers**: Detailed cards showcasing each provider's key features and benefits.
+2. **Benefit Guides**: Educational resources to help users understand different insurance products and benefits.
+3. **Get Started**: Easy-to-use contact section for users to begin their insurance journey.
 
-- **Framework:** Next.js 14
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui
-- **Icons:** Lucide React
-- **Deployment:** Vercel
-- **Form Handling:** React Hook Form
-- **Validation:** Zod
+## Technology Stack
 
-## 📦 Installation
+- **Framework**: Next.js 13 with App Router
+- **Frontend**: React with TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Heroicons
+- **UI Components**: Headless UI
+
+## Getting Started
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/nofigg/ceo-insurance.git
-cd ceo-insurance
 ```
 
 2. Install dependencies:
 ```bash
+cd ceo-insurance
 npm install
 ```
 
@@ -45,51 +41,16 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🔧 Configuration
+## Development
 
-The project uses several configuration files:
+The project uses modern web development practices:
+- TypeScript for type safety
+- CSS Modules with Tailwind for styling
+- Component-based architecture
+- Responsive design principles
 
-- `tailwind.config.js` - Tailwind CSS configuration
-- `components.json` - shadcn/ui components configuration
-- `tsconfig.json` - TypeScript configuration
+## Contributing
 
-## 📁 Project Structure
-
-```
-ceo-insurance/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── privacy-policy/
-│   ├── terms-of-service/
-│   └── income-disclosure/
-├── components/
-│   ├── ui/
-│   │   ├── badge.tsx
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   └── ...
-│   └── footer.tsx
-├── lib/
-│   └── utils.ts
-└── public/
-```
-
-## 🔄 Deployment
-
-The application is automatically deployed to Vercel when changes are pushed to the main branch. The deployment process includes:
-
-1. Automatic build optimization
-2. Edge network distribution
-3. Serverless functions
-4. Environment variable management
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-MIT License
+Feel free to submit issues and enhancement requests.
