@@ -179,6 +179,20 @@ export default function LandingPage() {
           </div>
           
           <div className="mx-auto max-w-7xl px-6 py-8 sm:py-16 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-20">
+            <div className="lg:hidden mb-8">
+              <ShieldCheckIcon 
+                className="mx-auto h-32 w-32 sm:h-40 sm:w-40 fill-transparent stroke-[1.5] [stroke:url(#gradient)]" 
+                aria-hidden="true" 
+              />
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient id="gradient" gradientTransform="rotate(90)">
+                    <stop offset="0%" stopColor="#ff80b5" />
+                    <stop offset="100%" stopColor="#9089fc" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
               <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 The Southwest's Premier Insurance Benefit Provider
@@ -198,8 +212,19 @@ export default function LandingPage() {
                 </a>
               </div>
             </div>
-            <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-              <ShieldCheckIcon className="mx-auto h-48 w-48 text-indigo-600/80 animate-pulse" aria-hidden="true" />
+            <div className="hidden lg:block lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+              <ShieldCheckIcon 
+                className="mx-auto h-48 w-48 fill-transparent stroke-[1.5] [stroke:url(#gradient-desktop)]" 
+                aria-hidden="true" 
+              />
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient id="gradient-desktop" gradientTransform="rotate(90)">
+                    <stop offset="0%" stopColor="#ff80b5" />
+                    <stop offset="100%" stopColor="#9089fc" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
         </div>
