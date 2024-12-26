@@ -2,12 +2,21 @@
 
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { 
+  Bars3Icon, 
+  XMarkIcon,
+  HeartIcon,
+  ChartBarIcon,
+  SparklesIcon,
+  ShieldCheckIcon,
+  BanknotesIcon
+} from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'Services', href: '#services' },
+  { name: 'Benefit Guides', href: '#guides' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -210,7 +219,7 @@ export default function LandingPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
               {/* Fidelity & Guaranty */}
-              <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Fidelity & Guaranty</h3>
@@ -244,7 +253,7 @@ export default function LandingPage() {
               </div>
 
               {/* American National */}
-              <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">American National</h3>
@@ -278,7 +287,7 @@ export default function LandingPage() {
               </div>
 
               {/* National Life Group */}
-              <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">National Life Group</h3>
@@ -312,7 +321,7 @@ export default function LandingPage() {
               </div>
 
               {/* Foresters Financial */}
-              <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Foresters Financial</h3>
@@ -346,7 +355,7 @@ export default function LandingPage() {
               </div>
 
               {/* Mutual of Omaha */}
-              <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
@@ -383,42 +392,60 @@ export default function LandingPage() {
         </div>
 
         {/* Benefit Guides Section */}
-        <div className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
+        <div id="guides" className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl">
-              <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
-                <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">Our Benefit Guides</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">Life Insurance Explained</h3>
-                    <a href="/guides/life-insurance" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                      Read More
-                    </a>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900">Our Benefit Guides</h2>
+              <p className="mt-2 text-lg leading-8 text-gray-600">
+                Comprehensive resources to help you understand and maximize your insurance benefits
+              </p>
+            </div>
+            <div className="mx-auto max-w-4xl mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
+                    <HeartIcon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">Understanding Annuities</h3>
-                    <a href="/guides/annuities" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                      Read More
-                    </a>
+                  <h3 className="text-base font-semibold text-gray-900">Life Insurance Explained</h3>
+                  <a href="/guides/life-insurance" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                    Read More
+                  </a>
+                </div>
+                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
+                    <ChartBarIcon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">Living Benefits Overview</h3>
-                    <a href="/guides/living-benefits" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                      Read More
-                    </a>
+                  <h3 className="text-base font-semibold text-gray-900">Understanding Annuities</h3>
+                  <a href="/guides/annuities" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                    Read More
+                  </a>
+                </div>
+                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
+                    <SparklesIcon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">Asset Protection & Accumulation Basics</h3>
-                    <a href="/guides/asset-protection" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                      Read More
-                    </a>
+                  <h3 className="text-base font-semibold text-gray-900">Living Benefits Overview</h3>
+                  <a href="/guides/living-benefits" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                    Read More
+                  </a>
+                </div>
+                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
+                    <ShieldCheckIcon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900">Planning for Retirement</h3>
-                    <a href="/guides/retirement-planning" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                      Read More
-                    </a>
+                  <h3 className="text-base font-semibold text-gray-900">Asset Protection & Accumulation Basics</h3>
+                  <a href="/guides/asset-protection" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                    Read More
+                  </a>
+                </div>
+                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm md:col-span-2">
+                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
+                    <BanknotesIcon className="h-6 w-6 text-indigo-600" />
                   </div>
+                  <h3 className="text-base font-semibold text-gray-900">Planning for Retirement</h3>
+                  <a href="/guides/retirement-planning" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                    Read More
+                  </a>
                 </div>
               </div>
             </div>
@@ -432,7 +459,7 @@ export default function LandingPage() {
             aria-hidden="true"
           >
             <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] animate-gradient-slow"
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
               style={{
                 clipPath:
                   'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
