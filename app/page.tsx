@@ -253,7 +253,7 @@ export default function LandingPage() {
                   <div>
                     <h3 className="text-2xl font-bold">FutureIncome (Fidelity & Guaranty)</h3>
                     <p className="mt-2 text-base text-gray-700">
-                      Specializing in fixed indexed annuities and life insurance products with a focus on retirement planning.
+                      Comprehensive annuity solutions offering flexible rates, retirement protection, and guaranteed lifetime income.
                     </p>
                     <ul className="mt-4 space-y-3">
                       <li className="flex items-start">
@@ -291,9 +291,9 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">American National</h3>
+                    <h3 className="text-2xl font-bold">Comprehensive Insurance Solutions</h3>
                     <p className="mt-2 text-base text-gray-700">
-                      Comprehensive insurance solutions with a legacy of financial strength and stability.
+                      Tailored life and retirement solutions with comprehensive benefits and guaranteed lifetime income.
                     </p>
                     <ul className="mt-4 space-y-3">
                       <li className="flex items-start">
@@ -331,9 +331,9 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">National Life Group</h3>
+                    <h3 className="text-2xl font-bold">Innovative Life Solutions</h3>
                     <p className="mt-2 text-base text-gray-700">
-                      Innovative life insurance and retirement solutions for individuals and families.
+                      Advanced life insurance products with diverse market solutions and comprehensive living benefits.
                     </p>
                     <ul className="mt-4 space-y-3">
                       <li className="flex items-start">
@@ -371,9 +371,9 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Foresters Financial</h3>
+                    <h3 className="text-2xl font-bold">Community-Focused Insurance</h3>
                     <p className="mt-2 text-base text-gray-700">
-                      Purpose-driven financial services provider with a unique member benefits package.
+                      Exclusive life insurance offerings with unique member benefits and comprehensive coverage options.
                     </p>
                     <ul className="mt-4 space-y-3">
                       <li className="flex items-start">
@@ -411,9 +411,9 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
+                    <h3 className="text-2xl font-bold">Trusted Insurance Provider</h3>
                     <p className="mt-2 text-base text-gray-700">
-                      Trusted name in insurance with a wide range of products and excellent financial strength.
+                      Comprehensive life insurance solutions with specialized long-term care and expedited underwriting.
                     </p>
                     <ul className="mt-4 space-y-3">
                       <li className="flex items-start">
