@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -14,7 +14,7 @@ const serviceNames = {
   'mutual-omaha': 'Mutual of Omaha'
 }
 
-export default function BookingPage() {
+function BookingContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const service = searchParams.get('service')
@@ -251,5 +251,13 @@ export default function BookingPage() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingContent />
+    </Suspense>
   )
 }
