@@ -208,7 +208,7 @@ export default function LandingPage() {
                 Retain and protect key personnel with top business performers backed by specialized insurance benefit packages against business loss and risk.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
               {/* Fidelity & Guaranty */}
               <div className="bg-white rounded-lg border p-6">
                 <div className="flex items-start justify-between">
