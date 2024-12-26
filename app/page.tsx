@@ -251,22 +251,28 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Fidelity & Guaranty</h3>
+                    <h3 className="text-2xl font-bold">FutureIncome (Fidelity & Guaranty)</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Specializing in fixed indexed annuities and life insurance products with a focus on retirement planning.
                     </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Strong financial ratings</span>
+                    <ul className="mt-4 space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Wide range of annuity options: fixed and indexed rates with participation rates</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Competitive interest rates</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Downside protection of retirement</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Flexible product options</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Growth potential and guaranteed income for life</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -289,18 +295,24 @@ export default function LandingPage() {
                     <p className="mt-2 text-base text-gray-700">
                       Comprehensive insurance solutions with a legacy of financial strength and stability.
                     </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Multiple coverage options</span>
+                    <ul className="mt-4 space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Life, retirement, and business solutions</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Customizable policies</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Lifetime income</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Excellent customer service</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Living benefits, rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -323,18 +335,24 @@ export default function LandingPage() {
                     <p className="mt-2 text-base text-gray-700">
                       Innovative life insurance and retirement solutions for individuals and families.
                     </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Living benefits included</span>
+                    <ul className="mt-4 space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Variety of life, retirement, and advanced market products</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Flexible premium options</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Lifetime income</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Guaranteed coverage</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Living benefits, rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -357,18 +375,24 @@ export default function LandingPage() {
                     <p className="mt-2 text-base text-gray-700">
                       Purpose-driven financial services provider with a unique member benefits package.
                     </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Member benefits included</span>
+                    <ul className="mt-4 space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Variety of life insurance products</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Community focus</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Exclusive member benefits such as Foresters Go, Law Assure, and Foresters Renew</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Competitive rates</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Living benefits, rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -391,18 +415,24 @@ export default function LandingPage() {
                     <p className="mt-2 text-base text-gray-700">
                       Trusted name in insurance with a wide range of products and excellent financial strength.
                     </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Strong financial ratings</span>
+                    <ul className="mt-4 space-y-3">
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Variety of life insurance solutions</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Diverse product portfolio</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Long-term care—cancer, heart attack, and stroke insurance</span>
                       </li>
-                      <li className="flex items-center">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
-                        <span>Excellent claims service</span>
+                      <li className="flex items-start">
+                        <div className="flex-shrink-0 mr-2">
+                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        </div>
+                        <span>Express underwriting</span>
                       </li>
                     </ul>
                     <div className="mt-6">
