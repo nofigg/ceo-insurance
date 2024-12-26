@@ -16,7 +16,6 @@ import { useRouter } from 'next/navigation'
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'Services', href: '#services' },
-  { name: 'Benefit Guides', href: '#guides' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -391,8 +390,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Benefit Guides Section */}
-        <div id="guides" className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
+        {/* Benefit Guides Section - Temporarily Hidden */}
+        {/* <div id="guides" className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900">Our Benefit Guides</h2>
@@ -450,7 +449,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Contact Section */}
         <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
