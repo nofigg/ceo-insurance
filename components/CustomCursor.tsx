@@ -6,8 +6,27 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isMoving, setIsMoving] = useState(false)
   const [target, setTarget] = useState({ x: 0, y: 0 })
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        window.matchMedia('(max-width: 768px)').matches
+      )
+    }
+
+    // Check initially and on resize
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return // Don't set up mouse tracking on mobile
+
     let timeoutId: NodeJS.Timeout
     let animationId: number
 
@@ -19,7 +38,7 @@ export default function CustomCursor() {
       clearTimeout(timeoutId)
       timeoutId = setTimeout(() => {
         setIsMoving(false)
-        setPosition(newTarget) // Ensure perfect centering when stopped
+        setPosition(newTarget)
       }, 100)
     }
 
@@ -41,11 +60,13 @@ export default function CustomCursor() {
       clearTimeout(timeoutId)
       cancelAnimationFrame(animationId)
     }
-  }, [isMoving, target])
+  }, [isMoving, target, isMobile])
+
+  if (isMobile) return null
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50"
+      className="pointer-events-none fixed inset-0 z-50 hidden md:block" // Hide on mobile using Tailwind
       style={{ cursor: 'none' }}
     >
       <div
