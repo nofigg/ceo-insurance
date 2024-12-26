@@ -10,7 +10,9 @@ Visit the live application at: [https://www.ceo-insurance.com](https://www.ceo-i
 - Modern, responsive UI built with Tailwind CSS
 - Server-side rendered pages with Next.js
 - Accessible components using shadcn/ui and Radix UI primitives
-- Insurance provider comparison tools
+- Insurance provider comparison with ranking system
+- Detailed provider cards with ratings and features
+- Interactive "See Plans" functionality
 - Agent connection system
 - Dark mode support
 
@@ -59,13 +61,17 @@ The project uses several configuration files:
 ceo-insurance/
 ├── app/
 │   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx
+│   ├── privacy-policy/
+│   ├── terms-of-service/
+│   └── income-disclosure/
 ├── components/
-│   └── ui/
-│       ├── badge.tsx
-│       ├── button.tsx
-│       ├── card.tsx
-│       └── ...
+│   ├── ui/
+│   │   ├── badge.tsx
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   └── ...
+│   └── footer.tsx
 ├── lib/
 │   └── utils.ts
 └── public/
