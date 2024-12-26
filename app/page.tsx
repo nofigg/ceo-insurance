@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import { 
   Bars3Icon, 
@@ -13,6 +13,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { StarIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -414,6 +416,36 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+
+        {/* Testimonial Section */}
+        <section className="bg-white px-6 py-24 sm:py-32 lg:px-8">
+          <figure className="mx-auto max-w-2xl">
+            <p className="sr-only">5 out of 5 stars</p>
+            <div className="flex gap-x-1 text-indigo-600">
+              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+            </div>
+            <blockquote className="mt-10 text-xl/8 font-semibold tracking-tight text-gray-900 sm:text-2xl/9">
+              <p>
+                "Their expertise in executive insurance solutions helped us create a comprehensive benefits package that truly sets us apart in attracting and retaining top talent. The team's deep understanding of complex insurance needs made all the difference for our executive team."
+              </p>
+            </blockquote>
+            <figcaption className="mt-10 flex items-center gap-x-6">
+              <img
+                alt=""
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80"
+                className="size-12 rounded-full bg-gray-50"
+              />
+              <div className="text-sm/6">
+                <div className="font-semibold text-gray-900">Michael Chen</div>
+                <div className="mt-0.5 text-gray-600">CEO of Global Solutions Inc</div>
+              </div>
+            </figcaption>
+          </figure>
+        </section>
 
         {/* Contact Section */}
         <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
