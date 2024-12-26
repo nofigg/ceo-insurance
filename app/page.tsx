@@ -383,7 +383,7 @@ export default function LandingPage() {
         </div>
 
         {/* Contact Section */}
-        <div id="contact" className="relative isolate bg-white py-16 sm:py-24">
+        <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true"
@@ -422,15 +422,15 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-8">
+      <footer className="bg-gray-100 py-8 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center text-sm text-gray-600">
             &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
           </div>
           <div className="flex justify-center space-x-4 mt-4">
-            <a href="/privacy-policy" className="text-sm text-blue-600 hover:underline">Privacy Policy</a>
-            <a href="/terms-of-service" className="text-sm text-blue-600 hover:underline">Terms of Service</a>
-            <a href="/income-disclosure" className="text-sm text-blue-600 hover:underline">Income Disclosure</a>
+            <a href="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Terms of Service</a>
+            <a href="/income-disclosure" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Income Disclosure</a>
           </div>
         </div>
       </footer>
