@@ -75,7 +75,8 @@ export default function Dashboard() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
+                  {/* Sidebar component, swap this element with another sidebar if you like */}
+                  <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
                       <img
                         className="h-8 w-auto"
@@ -83,6 +84,12 @@ export default function Dashboard() {
                         alt="CEO Insurance"
                       />
                     </div>
+                    <a
+                      href="/"
+                      className="flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors mb-4"
+                    >
+                      ← Back to Home
+                    </a>
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
                         <li>
@@ -124,6 +131,12 @@ export default function Dashboard() {
                 alt="CEO Insurance"
               />
             </div>
+            <a
+              href="/"
+              className="flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors mb-4"
+            >
+              ← Back to Home
+            </a>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>

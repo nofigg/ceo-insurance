@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Home', href: '#' },
-  { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
   { name: 'Contact', href: '#contact' },
 ]
@@ -42,7 +41,7 @@ export default function LandingPage() {
   return (
     <div className="relative bg-white">
       {/* Header */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -189,22 +188,233 @@ export default function LandingPage() {
                 We offer specialized insurance solutions designed to protect executives and their companies from modern business risks.
               </p>
             </div>
-            <div className="mx-auto mt-12 sm:mt-16 lg:mt-20">
-              <dl className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-                {features.map((feature) => (
-                  <div
-                    key={feature.name}
-                    className="rounded-lg bg-gray-50 p-6 hover:bg-gray-100 transition-colors"
-                  >
-                    <dt className="text-lg font-semibold leading-7 text-gray-900">
-                      {feature.name}
-                    </dt>
-                    <dd className="mt-4 text-base leading-7 text-gray-600">
-                      {feature.description}
-                    </dd>
+            <div className="grid grid-cols-1 gap-4 mt-12">
+              {/* Fidelity & Guaranty */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-6">
+                    <div className="text-center">
+                      <div className="text-6xl font-bold">1</div>
+                      <div className="mt-2 bg-blue-600 text-white text-sm px-3 py-1 rounded">BEST OVERALL</div>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">Fidelity & Guaranty</h3>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Wide range of annuity options with participation rates</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Downside protection of retirement</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Growth potential & guaranteed income for life</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                ))}
-              </dl>
+                  <div className="text-center">
+                    <div className="text-yellow-400 mb-1">🏆</div>
+                    <div className="text-3xl font-bold">9.8</div>
+                    <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
+                    <div className="text-yellow-400">★★★★★</div>
+                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
+                      See Plans
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* American National */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-6">
+                    <div className="text-center">
+                      <div className="text-6xl font-bold">2</div>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">American National</h3>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Life, retirement, & business solutions</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Lifetime income solutions</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Living benefits rider included at no extra cost</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">9.6</div>
+                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
+                    <div className="text-yellow-400">★★★★★</div>
+                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
+                      See Plans
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* National Life Group */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-6">
+                    <div className="text-center">
+                      <div className="text-6xl font-bold">3</div>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">National Life Group</h3>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Variety of life insurance products</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Retirement & advanced market products</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Living benefits rider included at no extra cost</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">9.5</div>
+                    <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
+                    <div className="text-yellow-400">★★★★★</div>
+                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
+                      See Plans
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Foresters Financial */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-6">
+                    <div className="text-center">
+                      <div className="text-6xl font-bold">4</div>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">Foresters Financial</h3>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Variety of life insurance products</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Exclusive member benefits included</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Living benefits rider included at no extra cost</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">9.4</div>
+                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
+                    <div className="text-yellow-400">★★★★★</div>
+                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
+                      See Plans
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mutual of Omaha */}
+              <div className="bg-white rounded-lg border p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-6">
+                    <div className="text-center">
+                      <div className="text-6xl font-bold">5</div>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Variety of life insurance solutions</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Long-term care, cancer, & stroke insurance</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>Express underwriting</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">9.3</div>
+                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
+                    <div className="text-yellow-400">★★★★★</div>
+                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
+                      See Plans
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -237,15 +447,15 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="text-center">
-            <p className="text-sm leading-6 text-gray-300">
-              &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
-            </p>
+      <footer className="bg-gray-100 py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-sm text-gray-600">
+            &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
+          </div>
+          <div className="flex justify-center space-x-4 mt-4">
+            <a href="/privacy-policy" className="text-sm text-blue-600 hover:underline">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-sm text-blue-600 hover:underline">Terms of Service</a>
+            <a href="/income-disclosure" className="text-sm text-blue-600 hover:underline">Income Disclosure</a>
           </div>
         </div>
       </footer>

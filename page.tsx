@@ -9,7 +9,7 @@ export default function InsuranceComparison() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Image
             src="/placeholder.svg"
@@ -25,7 +25,7 @@ export default function InsuranceComparison() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
+      <section className="relative h-[400px] overflow-hidden mt-16">
         <Image
           src="https://images.unsplash.com/photo-1556742393-d75f5e02b654?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3"
           alt="Family enjoying financial security"
@@ -321,37 +321,41 @@ export default function InsuranceComparison() {
         </div>
       </section>
 
-      <footer className="bg-gray-100 py-8 mt-12">
+      {/* About Section */}
+      <section id="about" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4">About Us</h3>
-              <p className="text-sm text-gray-600">
-                We provide comprehensive comparisons of insurance and benefit providers to help you make informed decisions about your financial future.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-blue-600 hover:underline">Home</a></li>
-                <li><a href="#" className="text-sm text-blue-600 hover:underline">Our Providers</a></li>
-                <li><a href="#" className="text-sm text-blue-600 hover:underline">Benefit Guides</a></li>
-                <li><a href="#" className="text-sm text-blue-600 hover:underline">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-4">Contact</h3>
-              <p className="text-sm text-gray-600">Email: info@benefitsadvisor.com</p>
-              <p className="text-sm text-gray-600">Phone: (555) 123-4567</p>
+          <h2 className="text-3xl font-bold mb-4">About CEO Insurance</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            CEO Insurance is dedicated to providing comprehensive comparisons of insurance and benefit providers. Our mission is to help you make informed decisions about your financial future by offering detailed insights and expert advice.
+          </p>
+          <p className="text-lg text-gray-700">
+            With a focus on transparency and accessibility, we strive to connect you with the best insurance options tailored to your needs. Our team of experienced professionals is committed to guiding you through the complexities of insurance coverage, ensuring you have the knowledge and resources to secure your future.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-[1fr_300px] gap-8">
+            <div className="space-y-6">
+              {/* ... */}
             </div>
           </div>
-          <Separator className="my-8" />
+        </div>
+      </section>
+
+      <footer className="bg-gray-100 py-8">
+        <div className="container mx-auto px-4">
           <div className="text-center text-sm text-gray-600">
-            © 2024 Benefits Advisor. All rights reserved.
+            &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
+          </div>
+          <div className="flex justify-center space-x-4 mt-4">
+            <a href="/privacy-policy" className="text-sm text-blue-600 hover:underline">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-sm text-blue-600 hover:underline">Terms of Service</a>
+            <a href="/income-disclosure" className="text-sm text-blue-600 hover:underline">Income Disclosure</a>
           </div>
         </div>
       </footer>
     </div>
   )
 }
-
