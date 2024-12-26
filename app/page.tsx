@@ -193,13 +193,13 @@ export default function LandingPage() {
                 >
                   Get Coverage
                 </button>
-                <a
-                  href="mailto:gonzate@yahoo.com"
-                  className="text-sm font-semibold leading-6 text-gray-900"
-                >
-                  Email Us <span aria-hidden="true">→</span>
+                <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="text-sm font-semibold leading-6 text-gray-900">
+                  Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>
+            </div>
+            <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+              <ShieldCheckIcon className="mx-auto h-48 w-48 text-indigo-600/80 animate-pulse" aria-hidden="true" />
             </div>
           </div>
         </div>
