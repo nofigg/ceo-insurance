@@ -30,6 +30,18 @@ const features = [
   }
 ]
 
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault()
+  if (href === '#') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  } else {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+}
+
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
@@ -68,6 +80,7 @@ export default function LandingPage() {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
               >
                 {item.name}
@@ -113,8 +126,11 @@ export default function LandingPage() {
                     <a
                       key={item.name}
                       href={item.href}
+                      onClick={(e) => {
+                        scrollToSection(e, item.href);
+                        setMobileMenuOpen(false);
+                      }}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
                     </a>
@@ -168,7 +184,11 @@ export default function LandingPage() {
                 >
                   Get Coverage
                 </button>
-                <a href="#services" className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors">
+                <a
+                  href="#services"
+                  onClick={(e) => scrollToSection(e, '#services')}
+                  className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
+                >
                   Our Services <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -219,12 +239,6 @@ export default function LandingPage() {
                     <div className="text-3xl font-bold">9.8</div>
                     <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
                     <div className="text-yellow-400">★★★★★</div>
-                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
-                      See Plans
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -259,12 +273,6 @@ export default function LandingPage() {
                     <div className="text-3xl font-bold">9.6</div>
                     <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
                     <div className="text-yellow-400">★★★★★</div>
-                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
-                      See Plans
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -299,12 +307,6 @@ export default function LandingPage() {
                     <div className="text-3xl font-bold">9.5</div>
                     <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
                     <div className="text-yellow-400">★★★★★</div>
-                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
-                      See Plans
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -339,12 +341,6 @@ export default function LandingPage() {
                     <div className="text-3xl font-bold">9.4</div>
                     <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
                     <div className="text-yellow-400">★★★★★</div>
-                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
-                      See Plans
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -379,12 +375,6 @@ export default function LandingPage() {
                     <div className="text-3xl font-bold">9.3</div>
                     <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
                     <div className="text-yellow-400">★★★★★</div>
-                    <button className="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md flex items-center justify-center gap-1">
-                      See Plans
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
