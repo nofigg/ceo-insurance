@@ -1,5 +1,6 @@
 import './tailwind.css'
 import './globals.css'
+import CustomCursor from '@/components/CustomCursor'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/react"
@@ -9,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'CEO Insurance',
-  description: 'Insurance solutions for your business',
+  description: 'Premier Insurance Benefit Provider in the American Southwest',
 }
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className} h-full`} suppressHydrationWarning={true}>
+        <CustomCursor />
         {children}
         <Analytics />
         <SpeedInsights />
