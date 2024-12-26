@@ -1,19 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { 
   Bars3Icon, 
   XMarkIcon,
-  HeartIcon,
-  ChartBarIcon,
-  SparklesIcon,
-  ShieldCheckIcon,
-  BanknotesIcon
+  ShieldCheckIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { StarIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
@@ -200,7 +195,7 @@ export default function LandingPage() {
                 The Southwest's Premier Insurance Benefit Provider
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to New Mexico, Texas to Nevada - we're your trusted local partner for comprehensive executive protection and business insurance solutions.
+                Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada - we're your trusted local partner for comprehensive executive protection and business insurance solutions.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
                 <button
@@ -231,8 +226,8 @@ export default function LandingPage() {
                 </defs>
               </svg>
             </div>
-          </div>
         </div>
+      </div>
 
         {/* Services Section */}
         <div id="services" className="bg-white py-8 sm:py-12">
@@ -251,7 +246,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">FutureIncome (Fidelity & Guaranty)</h3>
+                    <h3 className="text-2xl font-bold">Fidelity & Guaranty (Future Income)</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Comprehensive annuity solutions offering flexible rates, retirement protection, and guaranteed lifetime income.
                     </p>
@@ -260,7 +255,7 @@ export default function LandingPage() {
                         <div className="flex-shrink-0 mr-2">
                           <CheckCircleIcon className="h-5 w-5 text-green-500" />
                         </div>
-                        <span>Wide range of annuity options: fixed and indexed rates with participation rates</span>
+                        <span>Wide range of annuity options: fixed and indexed options* with participation rates</span>
                       </li>
                       <li className="flex items-start">
                         <div className="flex-shrink-0 mr-2">
@@ -312,7 +307,7 @@ export default function LandingPage() {
                         <div className="flex-shrink-0 mr-2">
                           <CheckCircleIcon className="h-5 w-5 text-green-500" />
                         </div>
-                        <span>Living benefits, rider included at no extra costs</span>
+                        <span>Living benefits rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -352,7 +347,7 @@ export default function LandingPage() {
                         <div className="flex-shrink-0 mr-2">
                           <CheckCircleIcon className="h-5 w-5 text-green-500" />
                         </div>
-                        <span>Living benefits, rider included at no extra costs</span>
+                        <span>Living benefits rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
@@ -392,7 +387,7 @@ export default function LandingPage() {
                         <div className="flex-shrink-0 mr-2">
                           <CheckCircleIcon className="h-5 w-5 text-green-500" />
                         </div>
-                        <span>Living benefits, rider included at no extra costs</span>
+                        <span>Living benefits rider included at no extra costs</span>
                       </li>
                     </ul>
                     <div className="mt-6">
