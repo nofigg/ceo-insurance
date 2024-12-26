@@ -382,6 +382,49 @@ export default function LandingPage() {
           </div>
         </div>
 
+        {/* Benefit Guides Section */}
+        <div className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl">
+              <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">Our Benefit Guides</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">Life Insurance Explained</h3>
+                    <a href="/guides/life-insurance" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                      Read More
+                    </a>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">Understanding Annuities</h3>
+                    <a href="/guides/annuities" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                      Read More
+                    </a>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">Living Benefits Overview</h3>
+                    <a href="/guides/living-benefits" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                      Read More
+                    </a>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">Asset Protection & Accumulation Basics</h3>
+                    <a href="/guides/asset-protection" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                      Read More
+                    </a>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">Planning for Retirement</h3>
+                    <a href="/guides/retirement-planning" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Section */}
         <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
           <div
