@@ -12,6 +12,7 @@ import {
   BanknotesIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -193,11 +194,10 @@ export default function LandingPage() {
                   Get Coverage
                 </button>
                 <a
-                  href="#services"
-                  onClick={(e) => scrollToSection(e, '#services')}
-                  className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
+                  href="mailto:gonzate@yahoo.com"
+                  className="text-sm font-semibold leading-6 text-gray-900"
                 >
-                  Our Services <span aria-hidden="true">→</span>
+                  Email Us <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -222,31 +222,31 @@ export default function LandingPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Fidelity & Guaranty</h3>
+                    <p className="mt-2 text-base text-gray-700">
+                      Specializing in fixed indexed annuities and life insurance products with a focus on retirement planning.
+                    </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Wide range of annuity options with participation rates</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Strong financial ratings</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Downside protection of retirement</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Competitive interest rates</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Growth potential & guaranteed income for life</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Flexible product options</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">9.8</div>
-                    <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
-                    <div className="text-yellow-400">★★★★★</div>
+                    <div className="mt-6">
+                      <a
+                        href="/book?service=fidelity"
+                        className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      >
+                        Schedule Consultation →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,31 +256,31 @@ export default function LandingPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">American National</h3>
+                    <p className="mt-2 text-base text-gray-700">
+                      Comprehensive insurance solutions with a legacy of financial strength and stability.
+                    </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Life, retirement, & business solutions</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Multiple coverage options</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Lifetime income solutions</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Customizable policies</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Living benefits rider included at no extra cost</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Excellent customer service</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">9.6</div>
-                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
-                    <div className="text-yellow-400">★★★★★</div>
+                    <div className="mt-6">
+                      <a
+                        href="/book?service=american-national"
+                        className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      >
+                        Schedule Consultation →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -290,31 +290,31 @@ export default function LandingPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">National Life Group</h3>
+                    <p className="mt-2 text-base text-gray-700">
+                      Innovative life insurance and retirement solutions for individuals and families.
+                    </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Variety of life insurance products</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Living benefits included</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Retirement & advanced market products</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Flexible premium options</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Living benefits rider included at no extra cost</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Guaranteed coverage</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">9.5</div>
-                    <div className="text-blue-600 text-sm font-semibold">EXCELLENT</div>
-                    <div className="text-yellow-400">★★★★★</div>
+                    <div className="mt-6">
+                      <a
+                        href="/book?service=national-life"
+                        className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      >
+                        Schedule Consultation →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -324,31 +324,31 @@ export default function LandingPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Foresters Financial</h3>
+                    <p className="mt-2 text-base text-gray-700">
+                      Purpose-driven financial services provider with a unique member benefits package.
+                    </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Variety of life insurance products</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Member benefits included</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Exclusive member benefits included</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Community focus</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Living benefits rider included at no extra cost</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Competitive rates</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">9.4</div>
-                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
-                    <div className="text-yellow-400">★★★★★</div>
+                    <div className="mt-6">
+                      <a
+                        href="/book?service=foresters"
+                        className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      >
+                        Schedule Consultation →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -358,98 +358,37 @@ export default function LandingPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
+                    <p className="mt-2 text-base text-gray-700">
+                      Trusted name in insurance with a wide range of products and excellent financial strength.
+                    </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Variety of life insurance solutions</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Strong financial ratings</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Long-term care, cancer, & stroke insurance</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Diverse product portfolio</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>Express underwriting</span>
+                      <li className="flex items-center">
+                        <CheckCircleIcon className="h-5 w-5 text-green-500 mr-2" />
+                        <span>Excellent claims service</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">9.3</div>
-                    <div className="text-blue-600 text-sm font-semibold">VERY GOOD</div>
-                    <div className="text-yellow-400">★★★★★</div>
+                    <div className="mt-6">
+                      <a
+                        href="/book?service=mutual-omaha"
+                        className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      >
+                        Schedule Consultation →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Benefit Guides Section - Temporarily Hidden */}
-        {/* <div id="guides" className="bg-white pt-10 pb-16 sm:pt-16 sm:pb-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-gray-900">Our Benefit Guides</h2>
-              <p className="mt-2 text-lg leading-8 text-gray-600">
-                Comprehensive resources to help you understand and maximize your insurance benefits
-              </p>
-            </div>
-            <div className="mx-auto max-w-4xl mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
-                    <HeartIcon className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">Life Insurance Explained</h3>
-                  <a href="/guides/life-insurance" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                    Read More
-                  </a>
-                </div>
-                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
-                    <ChartBarIcon className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">Understanding Annuities</h3>
-                  <a href="/guides/annuities" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                    Read More
-                  </a>
-                </div>
-                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
-                    <SparklesIcon className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">Living Benefits Overview</h3>
-                  <a href="/guides/living-benefits" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                    Read More
-                  </a>
-                </div>
-                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
-                    <ShieldCheckIcon className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">Asset Protection & Accumulation Basics</h3>
-                  <a href="/guides/asset-protection" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                    Read More
-                  </a>
-                </div>
-                <div className="flex flex-col items-start bg-white rounded-lg border border-gray-200 p-4 shadow-sm md:col-span-2">
-                  <div className="bg-indigo-50 p-2 rounded-lg mb-3">
-                    <BanknotesIcon className="h-6 w-6 text-indigo-600" />
-                  </div>
-                  <h3 className="text-base font-semibold text-gray-900">Planning for Retirement</h3>
-                  <a href="/guides/retirement-planning" className="text-sm text-indigo-600 hover:text-indigo-500 transition-colors">
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* Contact Section */}
         <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
@@ -471,18 +410,15 @@ export default function LandingPage() {
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 Be smart and conduct business the right way. Contact us today to find out what it takes to get your business protected!
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
+              <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="tel:+1234567890"
-                  className="w-full sm:w-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors text-center"
+                  href="tel:+19154332937"
+                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Call Us Now
                 </a>
-                <a
-                  href="mailto:contact@ceo-insurance.com"
-                  className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
-                >
-                  Email Us <span aria-hidden="true">→</span>
+                <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
+                  Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
