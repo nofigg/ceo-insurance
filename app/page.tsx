@@ -209,8 +209,11 @@ export default function LandingPage() {
                 >
                   Get Coverage
                 </button>
-                <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="text-sm font-semibold leading-6 text-gray-900">
-                  Learn more <span aria-hidden="true">→</span>
+                <a 
+                  href="mailto:gonzate@yahoo.com?subject=Inquiry%20About%20Executive%20Insurance%20Solutions&body=Hello%20Executive%20Insurance%20Team,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20executive%20insurance%20solutions.%20Could%20you%20provide%20me%20with%20more%20information?%0A%0ABest%20regards,"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Email Us <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -474,8 +477,11 @@ export default function LandingPage() {
                 >
                   Call Us Now
                 </a>
-                <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
-                  Learn more <span aria-hidden="true">→</span>
+                <a 
+                  href="mailto:gonzate@yahoo.com?subject=Inquiry%20About%20Executive%20Insurance%20Solutions&body=Hello%20Executive%20Insurance%20Team,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20executive%20insurance%20solutions.%20Could%20you%20provide%20me%20with%20more%20information?%0A%0ABest%20regards,"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Email Us <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
