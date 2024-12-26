@@ -291,7 +291,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Comprehensive Insurance Solutions</h3>
+                    <h3 className="text-2xl font-bold">American National</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Tailored life and retirement solutions with comprehensive benefits and guaranteed lifetime income.
                     </p>
@@ -331,7 +331,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Innovative Life Solutions</h3>
+                    <h3 className="text-2xl font-bold">National Life Group</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Advanced life insurance products with diverse market solutions and comprehensive living benefits.
                     </p>
@@ -371,7 +371,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Community-Focused Insurance</h3>
+                    <h3 className="text-2xl font-bold">Foresters Financial</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Exclusive life insurance offerings with unique member benefits and comprehensive coverage options.
                     </p>
@@ -411,7 +411,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold">Trusted Insurance Provider</h3>
+                    <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
                     <p className="mt-2 text-base text-gray-700">
                       Comprehensive life insurance solutions with specialized long-term care and expedited underwriting.
                     </p>
