@@ -1,10 +1,13 @@
 'use client'
 
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
+  const router = useRouter()
+
   const handleBackClick = () => {
-    window.location.href = '/'
+    router.push('/')
   }
 
   return (

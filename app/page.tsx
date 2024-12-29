@@ -5,7 +5,8 @@ import { Dialog } from '@headlessui/react'
 import { 
   Bars3Icon, 
   XMarkIcon,
-  ShieldCheckIcon
+  ShieldCheckIcon,
+  CloudIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -36,6 +37,54 @@ const features = [
   }
 ]
 
+const serviceNames = {
+  "fidelity": {
+    name: "Fidelity & Guaranty (Future Income)",
+    description: "Comprehensive annuity solutions offering flexible rates, retirement protection, and guaranteed lifetime income.",
+    features: [
+      "Flexible rates",
+      "Retirement protection",
+      "Guaranteed lifetime income"
+    ]
+  },
+  "american-national": {
+    name: "American National",
+    description: "Tailored life and retirement solutions with comprehensive benefits and guaranteed lifetime income.",
+    features: [
+      "Comprehensive benefits",
+      "Guaranteed lifetime income",
+      "Tailored solutions"
+    ]
+  },
+  "national-life": {
+    name: "National Life Group",
+    description: "Advanced life insurance products with diverse market solutions and comprehensive living benefits.",
+    features: [
+      "Diverse market solutions",
+      "Comprehensive living benefits",
+      "Advanced life insurance products"
+    ]
+  },
+  "foresters": {
+    name: "Foresters Financial",
+    description: "Exclusive life insurance offerings with unique member benefits and comprehensive coverage options.",
+    features: [
+      "Unique member benefits",
+      "Comprehensive coverage options",
+      "Exclusive life insurance offerings"
+    ]
+  },
+  "mutual-omaha": {
+    name: "Mutual of Omaha",
+    description: "Comprehensive life insurance solutions with specialized long-term care and expedited underwriting.",
+    features: [
+      "Specialized long-term care",
+      "Expedited underwriting",
+      "Comprehensive life insurance solutions"
+    ]
+  }
+}
+
 const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault()
   if (href === '#') {
@@ -64,11 +113,7 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">CEO Insurance</span>
-              <img
-                className="h-8 w-auto sm:h-10 lg:h-12"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="CEO Insurance"
-              />
+              <ShieldCheckIcon className="h-8 w-auto text-indigo-600 sm:h-10 lg:h-12" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -110,11 +155,7 @@ export default function LandingPage() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">CEO Insurance</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt="CEO Insurance"
-                />
+                <ShieldCheckIcon className="h-8 w-auto text-indigo-600" />
               </a>
               <button
                 type="button"
@@ -199,7 +240,7 @@ export default function LandingPage() {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
                 <button
-                  onClick={handleLogin}
+                  onClick={() => router.push('/book')}
                   className="w-full sm:w-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
                 >
                   Get Coverage
@@ -242,205 +283,36 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
-              {/* Fidelity & Guaranty */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">Fidelity & Guaranty (Future Income)</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                      Comprehensive annuity solutions offering flexible rates, retirement protection, and guaranteed lifetime income.
-                    </p>
-                    <ul className="mt-4 space-y-3">
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Wide range of annuity options: fixed and indexed options* with participation rates</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Downside protection of retirement</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Growth potential and guaranteed income for life</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6">
-                      <a
-                        href="/book?service=fidelity"
-                        className="text-indigo-600 hover:text-indigo-500 font-medium"
-                      >
-                        Schedule Consultation →
-                      </a>
+              {Object.entries(serviceNames).map(([key, service]) => (
+                <div key={key} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold">{service.name}</h3>
+                      <p className="mt-2 text-base text-gray-700">
+                        {service.description}
+                      </p>
+                      <ul className="mt-4 space-y-3">
+                        {service.features.map((feature, index) => (
+                          <li key={index} className="flex items-start">
+                            <div className="flex-shrink-0 mr-2">
+                              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                            </div>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-6">
+                        <button
+                          onClick={() => router.push(`/book?service=${key}`)}
+                          className="text-indigo-600 hover:text-indigo-500 font-medium"
+                        >
+                          Schedule Consultation →
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* American National */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">American National</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                      Tailored life and retirement solutions with comprehensive benefits and guaranteed lifetime income.
-                    </p>
-                    <ul className="mt-4 space-y-3">
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Life, retirement, and business solutions</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Lifetime income</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Living benefits rider included at no extra costs</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6">
-                      <a
-                        href="/book?service=american-national"
-                        className="text-indigo-600 hover:text-indigo-500 font-medium"
-                      >
-                        Schedule Consultation →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* National Life Group */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">National Life Group</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                      Advanced life insurance products with diverse market solutions and comprehensive living benefits.
-                    </p>
-                    <ul className="mt-4 space-y-3">
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Variety of life, retirement, and advanced market products</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Lifetime income</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Living benefits rider included at no extra costs</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6">
-                      <a
-                        href="/book?service=national-life"
-                        className="text-indigo-600 hover:text-indigo-500 font-medium"
-                      >
-                        Schedule Consultation →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Foresters Financial */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">Foresters Financial</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                      Exclusive life insurance offerings with unique member benefits and comprehensive coverage options.
-                    </p>
-                    <ul className="mt-4 space-y-3">
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Variety of life insurance products</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Exclusive member benefits such as Foresters Go, Law Assure, and Foresters Renew</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Living benefits rider included at no extra costs</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6">
-                      <a
-                        href="/book?service=foresters"
-                        className="text-indigo-600 hover:text-indigo-500 font-medium"
-                      >
-                        Schedule Consultation →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mutual of Omaha */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">Mutual of Omaha</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                      Comprehensive life insurance solutions with specialized long-term care and expedited underwriting.
-                    </p>
-                    <ul className="mt-4 space-y-3">
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Variety of life insurance solutions</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Long-term care—cancer, heart attack, and stroke insurance</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="flex-shrink-0 mr-2">
-                          <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                        </div>
-                        <span>Express underwriting</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6">
-                      <a
-                        href="/book?service=mutual-omaha"
-                        className="text-indigo-600 hover:text-indigo-500 font-medium"
-                      >
-                        Schedule Consultation →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
