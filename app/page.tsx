@@ -6,11 +6,13 @@ import {
   Bars3Icon, 
   XMarkIcon,
   ShieldCheckIcon,
-  CloudIcon
+  CloudIcon,
+  CheckCircleIcon,
+  StarIcon,
+  ArrowRightIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import { StarIcon } from '@heroicons/react/20/solid'
+import { classNames } from '../utils/classNames'
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -113,13 +115,13 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">CEO Insurance</span>
-              <ShieldCheckIcon className="h-8 w-auto text-indigo-600 sm:h-10 lg:h-12" />
+              <ShieldCheckIcon className="h-8 w-auto text-[#14213D] sm:h-10 lg:h-12" />
             </a>
           </div>
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#14213D]"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -132,19 +134,19 @@ export default function LandingPage() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
+                className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors"
               >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <button
-              onClick={handleLogin}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
+            <a
+              href="/book"
+              className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
             >
-              Agent Portal <span aria-hidden="true">→</span>
-            </button>
+              Book a Meeting
+            </a>
           </div>
         </nav>
         
@@ -155,11 +157,11 @@ export default function LandingPage() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">CEO Insurance</span>
-                <ShieldCheckIcon className="h-8 w-auto text-indigo-600" />
+                <ShieldCheckIcon className="h-8 w-auto text-[#14213D]" />
               </a>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-[#14213D]"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -177,22 +179,19 @@ export default function LandingPage() {
                         scrollToSection(e, item.href);
                         setMobileMenuOpen(false);
                       }}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
                     >
                       {item.name}
                     </a>
                   ))}
                 </div>
                 <div className="py-6">
-                  <button
-                    onClick={() => {
-                      setMobileMenuOpen(false)
-                      handleLogin()
-                    }}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  <a
+                    href="/book"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
                   >
-                    Agent Portal
-                  </button>
+                    Book a Meeting
+                  </a>
                 </div>
               </div>
             </div>
@@ -208,7 +207,7 @@ export default function LandingPage() {
             aria-hidden="true"
           >
             <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#FCA311] to-[#FFD700] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
               style={{
                 clipPath:
                   'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -225,31 +224,31 @@ export default function LandingPage() {
               <svg width="0" height="0">
                 <defs>
                   <linearGradient id="gradient" gradientTransform="rotate(90)">
-                    <stop offset="0%" stopColor="#ff80b5" />
-                    <stop offset="100%" stopColor="#9089fc" />
+                    <stop offset="0%" stopColor="#FCA311" />
+                    <stop offset="100%" stopColor="#FFD700" />
                   </linearGradient>
                 </defs>
               </svg>
             </div>
             <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-              <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-[#001d3d] sm:text-6xl">
                 The Southwest's Premier Insurance Benefit Provider
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada - we're your trusted local partner for comprehensive executive protection and business insurance solutions.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
-                <button
-                  onClick={() => router.push('/book')}
-                  className="w-full sm:w-auto rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+                <a
+                  href="/book"
+                  className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
                 >
                   Get Coverage
-                </button>
+                </a>
                 <a 
-                  href="mailto:gonzate@yahoo.com?subject=Inquiry%20About%20Executive%20Insurance%20Solutions&body=Hello%20Executive%20Insurance%20Team,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20executive%20insurance%20solutions.%20Could%20you%20provide%20me%20with%20more%20information?%0A%0ABest%20regards,"
-                  className="text-sm font-semibold leading-6 text-gray-900"
+                  href="mailto:gonzate@yahoo.com"
+                  className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311]"
                 >
-                  Email Us <span aria-hidden="true">→</span>
+                  Contact Us <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -261,8 +260,8 @@ export default function LandingPage() {
               <svg width="0" height="0">
                 <defs>
                   <linearGradient id="gradient-desktop" gradientTransform="rotate(90)">
-                    <stop offset="0%" stopColor="#ff80b5" />
-                    <stop offset="100%" stopColor="#9089fc" />
+                    <stop offset="0%" stopColor="#FCA311" />
+                    <stop offset="100%" stopColor="#FFD700" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -274,40 +273,39 @@ export default function LandingPage() {
         <div id="services" className="bg-white py-8 sm:py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Comprehensive Coverage</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
                 Insurance Solutions Tailored for Business Professionals
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Retain and protect key personnel with top business performers backed by specialized insurance benefit packages against business loss and risk.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
               {Object.entries(serviceNames).map(([key, service]) => (
-                <div key={key} className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+                <div key={key} className="bg-white rounded-xl p-8 shadow-lg border border-[#E5E5E5] hover:shadow-xl transition-all duration-300 hover:border-[#FCA311]">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="text-2xl font-bold">{service.name}</h3>
-                      <p className="mt-2 text-base text-gray-700">
-                        {service.description}
-                      </p>
-                      <ul className="mt-4 space-y-3">
+                      <h3 className="text-2xl font-bold text-[#001d3d]">{service.name}</h3>
+                      <p className="mt-2 text-[#001d3d]">{service.description}</p>
+                      <ul className="mt-6 space-y-4">
                         {service.features.map((feature, index) => (
-                          <li key={index} className="flex items-start">
-                            <div className="flex-shrink-0 mr-2">
-                              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                          <li key={index} className="flex items-center">
+                            <div className="flex-shrink-0 mr-3">
+                              <CheckCircleIcon className="h-5 w-5 text-[#34D399]" aria-hidden="true" />
                             </div>
-                            <span>{feature}</span>
+                            <span className="text-[#001d3d]">{feature}</span>
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-6">
-                        <button
-                          onClick={() => router.push(`/book?service=${key}`)}
-                          className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      <div className="mt-8">
+                        <a
+                          href="/book"
+                          className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center"
                         >
-                          Schedule Consultation →
-                        </button>
+                          Schedule Consultation
+                          <ArrowRightIcon className="ml-2 h-4 w-4" />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -321,14 +319,17 @@ export default function LandingPage() {
         <section className="bg-white px-6 py-24 sm:py-32 lg:px-8">
           <figure className="mx-auto max-w-2xl">
             <p className="sr-only">5 out of 5 stars</p>
-            <div className="flex gap-x-1 text-indigo-600">
-              <StarIcon aria-hidden="true" className="size-5 flex-none" />
-              <StarIcon aria-hidden="true" className="size-5 flex-none" />
-              <StarIcon aria-hidden="true" className="size-5 flex-none" />
-              <StarIcon aria-hidden="true" className="size-5 flex-none" />
-              <StarIcon aria-hidden="true" className="size-5 flex-none" />
+            <div className="flex gap-x-1 text-[#FCA311]">
+              {[0, 1, 2, 3, 4].map((rating) => (
+                <StarIcon
+                  key={rating}
+                  className={`${rating < 5 ? 'text-[#FCA311]' : 'text-[#E5E5E5]'} h-5 w-5 flex-shrink-0`}
+                  aria-hidden="true"
+                  fill="currentColor"
+                />
+              ))}
             </div>
-            <blockquote className="mt-10 text-xl/8 font-semibold tracking-tight text-gray-900 sm:text-2xl/9">
+            <blockquote className="mt-10 text-xl/8 font-semibold tracking-tight text-[#001d3d] sm:text-2xl/9">
               <p>
                 "Their expertise in executive insurance solutions helped us create a comprehensive benefits package that truly sets us apart in attracting and retaining top talent. The team's deep understanding of complex insurance needs made all the difference for our executive team."
               </p>
@@ -340,8 +341,8 @@ export default function LandingPage() {
                 className="size-12 rounded-full bg-gray-50"
               />
               <div className="text-sm/6">
-                <div className="font-semibold text-gray-900">Michael Chen</div>
-                <div className="mt-0.5 text-gray-600">CEO of Global Solutions Inc</div>
+                <div className="font-semibold text-[#001d3d]">Michael Chen</div>
+                <div className="mt-0.5 text-[#001d3d]">CEO of Global Solutions Inc</div>
               </div>
             </figcaption>
           </figure>
@@ -354,7 +355,7 @@ export default function LandingPage() {
             aria-hidden="true"
           >
             <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#FCA311] to-[#FFD700] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
               style={{
                 clipPath:
                   'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -363,20 +364,22 @@ export default function LandingPage() {
           </div>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Get Started</h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <h2 className="text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
+                Get Started
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Be smart and conduct business the right way. Contact us today to find out what it takes to get your business protected!
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="tel:+19154332937"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  href="/book"
+                  className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
                 >
-                  Call Us Now
+                  Book a Meeting
                 </a>
                 <a 
-                  href="mailto:gonzate@yahoo.com?subject=Inquiry%20About%20Executive%20Insurance%20Solutions&body=Hello%20Executive%20Insurance%20Team,%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20executive%20insurance%20solutions.%20Could%20you%20provide%20me%20with%20more%20information?%0A%0ABest%20regards,"
-                  className="text-sm font-semibold leading-6 text-gray-900"
+                  href="mailto:gonzate@yahoo.com"
+                  className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors"
                 >
                   Email Us <span aria-hidden="true">→</span>
                 </a>
@@ -389,13 +392,13 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-100 py-8 border-t border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="text-center text-sm text-gray-600">
+          <div className="text-center text-sm text-[#001d3d]">
             &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
           </div>
           <div className="flex justify-center space-x-4 mt-4">
-            <a href="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Privacy Policy</a>
-            <a href="/terms-of-service" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Terms of Service</a>
-            <a href="/income-disclosure" className="text-sm text-gray-500 hover:text-gray-700 transition-colors">Income Disclosure</a>
+            <a href="/privacy-policy" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Terms of Service</a>
+            <a href="/income-disclosure" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Income Disclosure</a>
           </div>
         </div>
       </footer>

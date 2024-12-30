@@ -1,4 +1,3 @@
-import './tailwind.css'
 import './globals.css'
 import CustomCursor from '@/components/CustomCursor'
 import type { Metadata } from 'next'
@@ -10,7 +9,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'CEO Insurance',
-  description: 'Premier Insurance Benefit Provider in the American Southwest',
+  description: "The Southwest's Premier Insurance Benefit Provider",
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({

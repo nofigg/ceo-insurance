@@ -70,7 +70,7 @@ export default function CustomCursor() {
       style={{ cursor: 'none' }}
     >
       <div
-        className={`absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-indigo-600 transition-transform duration-100 ${
+        className={`absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#FCA311] transition-transform duration-100 ${
           isMoving ? 'scale-75 opacity-50' : 'scale-100 opacity-100'
         }`}
         style={{
