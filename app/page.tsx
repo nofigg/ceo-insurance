@@ -115,7 +115,11 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">CEO Insurance</span>
-              <ShieldCheckIcon className="h-8 w-auto text-[#14213D] sm:h-10 lg:h-12" />
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="/eagle.png"
+                alt="CEO Insurance"
+              />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -157,7 +161,11 @@ export default function LandingPage() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">CEO Insurance</span>
-                <ShieldCheckIcon className="h-8 w-auto text-[#14213D]" />
+                <img
+                  className="h-8 w-auto"
+                  src="/eagle.png"
+                  alt="CEO Insurance"
+                />
               </a>
               <button
                 type="button"
@@ -235,7 +243,7 @@ export default function LandingPage() {
                 The Southwest's Premier Insurance Benefit Provider
               </h1>
               <p className="mt-6 text-lg leading-8 text-[#001d3d]">
-                Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada - we're your trusted local partner for comprehensive executive protection and business insurance solutions.
+                Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada — we're your trusted local partner for comprehensive executive protection and business insurance solutions.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
                 <a

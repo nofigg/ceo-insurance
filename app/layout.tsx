@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'CEO Insurance',
   description: "The Southwest's Premier Insurance Benefit Provider",
   icons: {
-    icon: '/favicon.svg',
+    icon: '/eagle.png',
   },
 }
 
