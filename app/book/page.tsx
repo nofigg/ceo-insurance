@@ -499,14 +499,18 @@ function BookingContent() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-[#001d3d] sm:text-6xl">
-            {currentStep === 1 ? 'Book a Consultation' : currentStep === 2 ? 'Select Services' : 'Review and Submit'}
+            <Suspense fallback={<div>Loading...</div>}>
+              {currentStep === 1 ? 'Book a Consultation' : currentStep === 2 ? 'Select Services' : 'Review and Submit'}
+            </Suspense>
           </h1>
           <p className="mt-6 text-lg leading-8 text-[#001d3d]">
-            {currentStep === 1 
-              ? "Choose the insurance services you're interested in."
-              : currentStep === 2 
-              ? "Please provide your contact information and preferences."
-              : "Review your information and submit your consultation request."}
+            <Suspense fallback={<div>Loading...</div>}>
+              {currentStep === 1 
+                ? "Choose the insurance services you're interested in."
+                : currentStep === 2 
+                ? "Please provide your contact information and preferences."
+                : "Review your information and submit your consultation request."}
+            </Suspense>
           </p>
         </div>
 
@@ -547,20 +551,10 @@ function BookingContent() {
   )
 }
 
-export default function Book() {
+export default function BookPage() {
   return (
-    <div className="min-h-screen bg-[#FFFFFF]">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl">
-          <Suspense fallback={
-            <div className="flex items-center justify-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#14213D]"></div>
-            </div>
-          }>
-            <BookingContent />
-          </Suspense>
-        </div>
-      </div>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingContent />
+    </Suspense>
   )
 }
