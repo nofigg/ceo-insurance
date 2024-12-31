@@ -17,7 +17,7 @@ import { classNames } from '../utils/classNames'
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'Services', href: '#services' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Email Us', href: 'mailto:gonzate@yahoo.com' },
 ]
 
 const features = [
@@ -149,7 +149,7 @@ export default function LandingPage() {
               href="/book"
               className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300 min-w-[120px]"
             >
-              Book a Meeting
+              Talk To An Expert
             </a>
           </div>
         </nav>
@@ -198,7 +198,7 @@ export default function LandingPage() {
                     href="/book"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
                   >
-                    Book a Meeting
+                    Talk To An Expert
                   </a>
                 </div>
               </div>
@@ -251,13 +251,13 @@ export default function LandingPage() {
                   className="rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D]"
                   style={{ paddingLeft: '4em', paddingRight: '4em' }}
                 >
-                  Get Coverage
+                  Explore Coverage Options
                 </a>
                 <a 
                   href="mailto:gonzate@yahoo.com"
                   className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311]"
                 >
-                  Contact Us <span aria-hidden="true">→</span>
+                  Email Us <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function LandingPage() {
                   href="/book"
                   className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
                 >
-                  Book a Meeting
+                  Talk To An Expert
                 </a>
                 <a 
                   href="mailto:gonzate@yahoo.com"

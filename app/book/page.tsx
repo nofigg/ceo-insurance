@@ -500,7 +500,7 @@ function BookingContent() {
         <div className="mx-auto max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-[#001d3d] sm:text-6xl">
             <Suspense fallback={<div>Loading...</div>}>
-              {currentStep === 1 ? 'Get Your Free Quote' : currentStep === 2 ? 'Select Services' : 'Review and Submit'}
+              {currentStep === 1 ? 'Talk To An Expert' : currentStep === 2 ? 'Select Services' : 'Review and Submit'}
             </Suspense>
           </h1>
           <p className="mt-6 text-lg leading-8 text-[#001d3d]">
