@@ -147,7 +147,7 @@ export default function LandingPage() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="/book"
-              className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
+              className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300 min-w-[120px]"
             >
               Book a Meeting
             </a>
@@ -248,7 +248,8 @@ export default function LandingPage() {
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
                 <a
                   href="/book"
-                  className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
+                  className="rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D]"
+                  style={{ paddingLeft: '4em', paddingRight: '4em' }}
                 >
                   Get Coverage
                 </a>
@@ -311,7 +312,7 @@ export default function LandingPage() {
                           href="/book"
                           className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center"
                         >
-                          Schedule Consultation
+                          Get Your Free Quote
                           <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </a>
                       </div>
