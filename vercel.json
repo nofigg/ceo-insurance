@@ -19,10 +19,5 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "api/*": {
-      "maxDuration": 10
-    }
-  }
+  "trailingSlash": false
 }
