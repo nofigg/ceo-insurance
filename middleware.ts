@@ -20,6 +20,13 @@ export function middleware(request: NextRequest) {
     'max-age=31536000; includeSubDomains; preload'
   )
 
+  // Add caching headers for static content
+  if (request.nextUrl.pathname.match(/\.(js|css|png|jpg|jpeg|gif|ico)$/)) {
+    headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  } else {
+    headers.set('Cache-Control', 'public, max-age=3600, must-revalidate')
+  }
+
   // Content Security Policy
   headers.set(
     'Content-Security-Policy',
