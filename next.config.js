@@ -7,17 +7,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://*.vercel.app https://*.vercel.com https://vercel.live https://*.vercel-insights.com;",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.app https://*.vercel.com https://*.vercel-scripts.com https://vercel.live https://*.vercel-insights.com;",
-              "style-src 'self' 'unsafe-inline';",
-              "img-src 'self' data: https: blob:;",
-              "font-src 'self' data:;",
-              "connect-src 'self' https://*.vercel.app https://*.vercel.com https://*.vercel-insights.com https: wss:;",
-              "frame-src 'self' https://vercel.live https://*.vercel.app https://*.vercel.com;",
-              "worker-src 'self' blob:;",
-              "child-src 'self' blob: https://vercel.live https://*.vercel.app https://*.vercel.com;"
-            ].join(' ')
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' data:;"
           }
         ]
       }
@@ -26,6 +16,9 @@ const nextConfig = {
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
     // Add any webpack-specific configurations here if needed
+    if (!isServer) {
+      // client-side config adjustments
+    }
     return config
   },
   // Disable type checking during builds for better performance
@@ -37,6 +30,12 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true
+  },
+  // Disable Vercel Analytics
+  analyticsId: false,
+  // Disable Speed Insights
+  speedInsights: {
+    enabled: false,
   },
 }
 
