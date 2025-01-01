@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import rateLimit from 'express-rate-limit'
 import { RateLimiterMemory } from 'rate-limiter-flexible'
 
 const limiter = new RateLimiterMemory({
