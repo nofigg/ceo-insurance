@@ -181,7 +181,12 @@ export default function LandingPage() {
         </nav>
         
         {/* Mobile menu */}
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+        >
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
@@ -206,23 +211,22 @@ export default function LandingPage() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
+                    <button
                       key={item.name}
-                      href={item.href ? `#${item.href}` : '#'}
-                      onClick={(e) => {
-                        scrollToSection(e as any, item.href ? `#${item.href}` : '#');
-                        setMobileMenuOpen(false);
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        scrollToSection(e, item.href ? `#${item.href}` : '#')
+                        setMobileMenuOpen(false)
                       }}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50 w-full text-left"
                     >
                       {item.name}
-                    </a>
+                    </button>
                   ))}
                 </div>
                 <div className="py-6">
                   <a
                     href="/book"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
+                    className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300"
                   >
                     Talk To An Expert
                   </a>
