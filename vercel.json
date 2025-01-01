@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self' https://*.vercel.app https://*.vercel.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.app https://*.vercel.com https://*.vercel-scripts.com https://vercel.live; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.app https://*.vercel.com https://*.vercel-scripts.com https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.vercel.app https://*.vercel.com https: wss:; frame-ancestors 'self'; worker-src 'self' blob:; child-src 'self' blob:; manifest-src 'self'"
+          "value": "default-src 'self' https://*.vercel.app https://*.vercel.com https://vercel.live https://*.vercel-insights.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.vercel.app https://*.vercel.com https://*.vercel-scripts.com https://vercel.live https://*.vercel-insights.com; style-src 'self' 'unsafe-inline' https://*.vercel.app; img-src 'self' data: https: blob:; font-src 'self' data: https:; connect-src 'self' https://*.vercel.app https://*.vercel.com https://*.vercel-insights.com https: wss:; frame-src 'self' https://vercel.live https://*.vercel.app https://*.vercel.com; worker-src 'self' blob:; child-src 'self' blob: https://vercel.live https://*.vercel.app https://*.vercel.com; manifest-src 'self'"
         },
         {
           "key": "Cache-Control",
