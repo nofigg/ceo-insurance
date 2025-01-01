@@ -23,19 +23,19 @@ export function middleware(request: NextRequest) {
   // Content Security Policy
   headers.set(
     'Content-Security-Policy',
-    `
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval';
-      style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https:;
-      font-src 'self';
-      connect-src 'self';
-      frame-ancestors 'none';
-      form-action 'self';
-      base-uri 'self';
-      object-src 'none';
-      upgrade-insecure-requests;
-    `.replace(/\s+/g, ' ').trim()
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.vercel-scripts.com; " +
+    "script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' *.vercel-scripts.com; " +
+    "connect-src 'self' *.vercel-scripts.com; " +
+    "style-src 'self' 'unsafe-inline'; " +
+    "img-src 'self' data: https: blob:; " +
+    "font-src 'self' data:; " +
+    "object-src 'none'; " +
+    "base-uri 'self'; " +
+    "form-action 'self'; " +
+    "frame-ancestors 'none'; " +
+    "block-all-mixed-content; " +
+    "upgrade-insecure-requests;"
   )
 
   // Permissions Policy

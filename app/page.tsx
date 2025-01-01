@@ -1,15 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
+import { Dialog, Disclosure } from '@headlessui/react'
 import { 
   Bars3Icon, 
   XMarkIcon,
   ShieldCheckIcon,
-  CloudIcon,
   CheckCircleIcon,
   StarIcon,
-  ArrowRightIcon
+  ArrowRightIcon,
+  MinusSmallIcon,
+  PlusSmallIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import { classNames } from '../utils/classNames'
@@ -17,7 +18,8 @@ import { classNames } from '../utils/classNames'
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'Services', href: '#services' },
-  { name: 'Email Us', href: 'mailto:gonzate@yahoo.com' },
+  { name: 'Resources', href: '#resources' },
+  { name: 'Get Started', href: '#get-started' }
 ]
 
 const features = [
@@ -87,6 +89,29 @@ const serviceNames = {
   }
 }
 
+const faqs = [
+  {
+    question: "Life Insurance Explained",
+    answer: "Understanding life insurance is crucial for protecting your business and loved ones. Our comprehensive guide covers various types of life insurance policies, their benefits, and how they can be structured to meet both personal and business needs. We'll help you navigate term life, whole life, and universal life options to find the perfect coverage for your situation."
+  },
+  {
+    question: "Understanding Annuities",
+    answer: "Annuities can provide a steady stream of income for your retirement or business succession planning. Learn about different types of annuities, including fixed, variable, and indexed options. We'll explain how annuities can be used for guaranteed income, tax-deferred growth, and legacy planning."
+  },
+  {
+    question: "Living Benefits Overview",
+    answer: "Living benefits provide financial protection while you're still alive. Discover how these benefits can help with long-term care, chronic illness, or critical illness expenses. We'll explore how living benefits can be integrated into your insurance policy to provide comprehensive coverage for life's unexpected challenges."
+  },
+  {
+    question: "Asset Protection & Accumulation Basics",
+    answer: "Protect and grow your assets with strategic insurance solutions. Learn about wealth protection strategies, tax-advantaged growth opportunities, and how to shield your assets from potential creditors. We'll guide you through various tools and techniques to help secure your financial future."
+  },
+  {
+    question: "Planning for Retirement",
+    answer: "Create a secure retirement strategy with our comprehensive planning guide. Understand how to combine different retirement vehicles, maximize tax advantages, and ensure a steady income stream during retirement. We'll help you develop a plan that aligns with your business exit strategy and personal retirement goals."
+  }
+]
+
 const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault()
   if (href === '#') {
@@ -102,9 +127,10 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  const handleLogin = () => {
-    router.push('/dashboard')
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index)
   }
 
   return (
@@ -115,9 +141,9 @@ export default function LandingPage() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">CEO Insurance</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="/eagle.png"
+              <img 
+                className="h-8 w-auto sm:h-10" 
+                src="/eagle.png" 
                 alt="CEO Insurance"
               />
             </a>
@@ -161,9 +187,9 @@ export default function LandingPage() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">CEO Insurance</span>
-                <img
-                  className="h-8 w-auto"
-                  src="/eagle.png"
+                <img 
+                  className="h-8 w-auto sm:h-10" 
+                  src="/eagle.png" 
                   alt="CEO Insurance"
                 />
               </a>
@@ -325,7 +351,7 @@ export default function LandingPage() {
         </div>
 
         {/* Testimonial Section */}
-        <section className="bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <section className="bg-white px-6 py-16 sm:py-20 lg:px-8">
           <figure className="mx-auto max-w-2xl">
             <p className="sr-only">5 out of 5 stars</p>
             <div className="flex gap-x-1 text-[#FCA311]">
@@ -357,8 +383,45 @@ export default function LandingPage() {
           </figure>
         </section>
 
-        {/* Contact Section */}
-        <div id="contact" className="relative isolate bg-gray-50/80 py-16 sm:py-24">
+        {/* Resources Section */}
+        <div id="resources" className="bg-white relative z-10">
+          <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
+            <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+              <h2 className="text-4xl font-semibold tracking-tight text-[#001d3d] sm:text-5xl">
+                Resources
+              </h2>
+              <div className="mt-10 space-y-6 divide-y divide-gray-900/10">
+                {faqs.map((faq, index) => (
+                  <div key={faq.question} className="pt-6 group">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="flex w-full items-start justify-between text-left text-[#001d3d] cursor-pointer hover:text-[#FCA311] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCA311] focus:ring-offset-2 rounded-lg p-2 -m-2"
+                      aria-expanded={openFaq === index}
+                      type="button"
+                    >
+                      <span className="text-base font-semibold leading-7 group-hover:text-[#FCA311]">{faq.question}</span>
+                      <span className="ml-6 flex h-7 items-center">
+                        {openFaq === index ? (
+                          <MinusSmallIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                        ) : (
+                          <PlusSmallIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                        )}
+                      </span>
+                    </button>
+                    {openFaq === index && (
+                      <div className="mt-2 pr-12">
+                        <p className="text-base leading-7 text-gray-600">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Get Started Section */}
+        <div id="get-started" className="relative isolate bg-gray-50/80 py-16 sm:py-20">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true"
