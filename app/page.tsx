@@ -16,10 +16,10 @@ import { useRouter } from 'next/navigation'
 import { classNames } from '../utils/classNames'
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Services', href: '#services' },
-  { name: 'Resources', href: '#resources' },
-  { name: 'Get Started', href: '#get-started' }
+  { name: 'Home', href: '' },
+  { name: 'Services', href: 'services' },
+  { name: 'Resources', href: 'resources' },
+  { name: 'Get Started', href: 'get-started' }
 ]
 
 const features = [
@@ -112,12 +112,13 @@ const faqs = [
   }
 ]
 
-const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
   e.preventDefault()
-  if (href === '#') {
+  const targetId = href.replace('#', '')
+  if (targetId === '') {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   } else {
-    const element = document.querySelector(href)
+    const element = document.getElementById(targetId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
@@ -160,14 +161,13 @@ export default function LandingPage() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => scrollToSection(e, item.href ? `#${item.href}` : '#')}
+                className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors cursor-pointer bg-transparent border-none"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -208,9 +208,9 @@ export default function LandingPage() {
                   {navigation.map((item) => (
                     <a
                       key={item.name}
-                      href={item.href}
+                      href={item.href ? `#${item.href}` : '#'}
                       onClick={(e) => {
-                        scrollToSection(e, item.href);
+                        scrollToSection(e as any, item.href ? `#${item.href}` : '#');
                         setMobileMenuOpen(false);
                       }}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50"
