@@ -11,11 +11,5 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rateLimits": {
-    "ip": {
-      "windowMs": 60000,
-      "max": 100
-    }
-  }
+  "trailingSlash": false
 }
