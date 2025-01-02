@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { createEdgeRouter } from 'next-connect'
-import { RateLimiter } from '@upstash/ratelimit'
+import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
 // Create a new router instance
@@ -14,9 +14,9 @@ const redis = new Redis({
 })
 
 // Create a new rate limiter instance
-const ratelimit = new RateLimiter({
+const ratelimit = new Ratelimit({
   redis,
-  limiter: RateLimiter.slidingWindow(10, '10 s'), // 10 requests per 10 seconds
+  limiter: Ratelimit.slidingWindow(10, '10 s'), // 10 requests per 10 seconds
 })
 
 // Middleware function
