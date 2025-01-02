@@ -91,24 +91,16 @@ const serviceNames = {
 
 const faqs = [
   {
-    question: "Life Insurance Explained",
-    answer: "Understanding life insurance is crucial for protecting your business and loved ones. Our comprehensive guide covers various types of life insurance policies, their benefits, and how they can be structured to meet both personal and business needs. We'll help you navigate term life, whole life, and universal life options to find the perfect coverage for your situation."
+    question: "Life Insurance Types",
+    answer: "Explore the key types of life insurance, including term, whole life, universal life, and indexed universal life, to make informed financial decisions. Learn their benefits, drawbacks, and suitability for different financial goals.<br/><br/>For more details, check out this video: <a href='https://youtu.be/f5B3uR_fySg?si=UIbO40sZe0Vocp9W' target='_blank' rel='noopener noreferrer' class='text-[#FCA311] hover:text-[#14213D] transition-colors'>Life Insurance Types Explained</a>."
   },
   {
     question: "Understanding Annuities",
-    answer: "Annuities can provide a steady stream of income for your retirement or business succession planning. Learn about different types of annuities, including fixed, variable, and indexed options. We'll explain how annuities can be used for guaranteed income, tax-deferred growth, and legacy planning."
+    answer: "Understanding annuities can empower your financial decisions by offering tailored options for stability and growth. Learn about key considerations like safeguarding principal investments, guaranteed income, and passing on benefits without probate complications. Additionally, learn about investment options, including banking products, the stock market, and insurance, and explore annuities' two main stages—accumulation and distribution phases.<br/><br/>For more details, check out this video: <a href='https://www.youtube.com/watch?v=zbUFn_FMSzA' target='_blank' rel='noopener noreferrer' class='text-[#FCA311] hover:text-[#14213D] transition-colors'>Annuities Explained</a>."
   },
   {
     question: "Living Benefits Overview",
-    answer: "Living benefits provide financial protection while you're still alive. Discover how these benefits can help with long-term care, chronic illness, or critical illness expenses. We'll explore how living benefits can be integrated into your insurance policy to provide comprehensive coverage for life's unexpected challenges."
-  },
-  {
-    question: "Asset Protection & Accumulation Basics",
-    answer: "Protect and grow your assets with strategic insurance solutions. Learn about wealth protection strategies, tax-advantaged growth opportunities, and how to shield your assets from potential creditors. We'll guide you through various tools and techniques to help secure your financial future."
-  },
-  {
-    question: "Planning for Retirement",
-    answer: "Create a secure retirement strategy with our comprehensive planning guide. Understand how to combine different retirement vehicles, maximize tax advantages, and ensure a steady income stream during retirement. We'll help you develop a plan that aligns with your business exit strategy and personal retirement goals."
+    answer: "Life insurance policies offer more than death coverage by addressing critical financial needs during your lifetime. From illness or disability support to securing cash value for long-term stability, living benefits provide comprehensive financial solutions for personal and family planning.<br/><br/>For more details, check out this video: <a href='https://www.youtube.com/watch?v=Ta3DDWrQrQc' target='_blank' rel='noopener noreferrer' class='text-[#FCA311] hover:text-[#14213D] transition-colors'>Living Benefits Explained</a>."
   }
 ]
 
@@ -135,9 +127,9 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="relative bg-white">
+    <div className="relative">
       {/* Header */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/40 backdrop-blur-xl border-b border-gray-200/30">
         <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -237,7 +229,7 @@ export default function LandingPage() {
         </Dialog>
       </header>
 
-      <main className="relative">
+      <main className="bg-transparent">
         {/* Hero Section */}
         <div className="relative isolate pt-24">
           <div
@@ -309,7 +301,7 @@ export default function LandingPage() {
       </div>
 
         {/* Services Section */}
-        <div id="services" className="bg-white py-8 sm:py-12">
+        <div id="services" className="py-8 sm:py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage</h2>
@@ -322,7 +314,7 @@ export default function LandingPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
               {Object.entries(serviceNames).map(([key, service]) => (
-                <div key={key} className="bg-white rounded-xl p-8 shadow-lg border border-[#E5E5E5] hover:shadow-xl transition-all duration-300 hover:border-[#FCA311]">
+                <div key={key} className="rounded-xl p-8 shadow-lg border border-[#E5E5E5] hover:shadow-xl transition-all duration-300 hover:border-[#FCA311]">
                   <div className="flex items-start justify-between">
                     <div>
                       <h3 className="text-2xl font-bold text-[#001d3d]">{service.name}</h3>
@@ -355,7 +347,7 @@ export default function LandingPage() {
         </div>
 
         {/* Testimonial Section */}
-        <section className="bg-white px-6 py-16 sm:py-20 lg:px-8">
+        <section className="px-6 py-16 sm:py-20 lg:px-8">
           <figure className="mx-auto max-w-2xl">
             <p className="sr-only">5 out of 5 stars</p>
             <div className="flex gap-x-1 text-[#FCA311]">
@@ -388,7 +380,7 @@ export default function LandingPage() {
         </section>
 
         {/* Resources Section */}
-        <div id="resources" className="bg-white relative z-10">
+        <div id="resources" className="relative z-10 mb-16">
           <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
             <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
               <h2 className="text-4xl font-semibold tracking-tight text-[#001d3d] sm:text-5xl">
@@ -414,7 +406,10 @@ export default function LandingPage() {
                     </button>
                     {openFaq === index && (
                       <div className="mt-2 pr-12">
-                        <p className="text-base leading-7 text-gray-600">{faq.answer}</p>
+                        <p 
+                          className="text-base leading-7 text-gray-600"
+                          dangerouslySetInnerHTML={{ __html: faq.answer }}
+                        />
                       </div>
                     )}
                   </div>
@@ -425,9 +420,9 @@ export default function LandingPage() {
         </div>
 
         {/* Get Started Section */}
-        <div id="get-started" className="relative isolate bg-gray-50/80 py-16 sm:py-20">
+        <div id="get-started" className="relative isolate bg-gray-50/80 py-16 overflow-hidden">
           <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl"
             aria-hidden="true"
           >
             <div
@@ -466,15 +461,15 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-8 border-t border-gray-200">
-        <div className="container mx-auto px-4">
+      <footer className="bg-white/40 backdrop-blur-xl border-t border-gray-200/30">
+        <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-[#001d3d]">
             &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
           </div>
-          <div className="flex justify-center space-x-4 mt-4">
-            <a href="/privacy-policy" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Privacy Policy</a>
-            <a href="/terms-of-service" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Terms of Service</a>
-            <a href="/income-disclosure" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors">Income Disclosure</a>
+          <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-2 sm:space-y-0 mt-4">
+            <a href="/privacy-policy" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Privacy Policy</a>
+            <a href="/terms-of-service" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Terms of Service</a>
+            <a href="/income-disclosure" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Income Disclosure</a>
           </div>
         </div>
       </footer>
