@@ -303,7 +303,7 @@ export default function LandingPage() {
                   Get Your Free Quote
                 </a>
                 <a
-                  href="/quote"
+                  href="https://cal.com/gonzalosandate"
                   className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
                 >
                   Book A Consultation
@@ -476,7 +476,7 @@ export default function LandingPage() {
                   Get Your Free Quote
                 </a>
                 <a
-                  href="/quote"
+                  href="https://cal.com/gonzalosandate"
                   className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
                 >
                   Book A Consultation
