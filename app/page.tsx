@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, memo } from 'react'
+import { useState, memo, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import { 
   Bars3Icon, 
@@ -10,14 +10,15 @@ import {
   StarIcon,
   ArrowRightIcon,
   MinusSmallIcon,
-  PlusSmallIcon
+  PlusSmallIcon,
+  PhoneIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import GradientOverlay from '@/components/ui/gradient-overlay'
 
 const navigation = [
-  { name: 'Home', href: '' },
-  { name: 'Services', href: 'services' },
+  { name: 'Home', href: 'home' },
+  { name: 'Options', href: 'services' },
   { name: 'Resources', href: 'resources' },
   { name: 'Get Started', href: 'get-started' }
 ]
@@ -104,21 +105,19 @@ const faqs = [
   }
 ]
 
-const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
-  e.preventDefault()
-  const targetId = href.replace('#', '')
-  if (targetId === '') {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  } else {
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, section: string) => {
+  e.preventDefault();
+  const element = document.getElementById(section);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isMoving, setIsMoving] = useState(false)
+  const [showBanner, setShowBanner] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const router = useRouter()
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
@@ -126,13 +125,44 @@ export default function LandingPage() {
     setOpenFaq(openFaq === index ? null : index)
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowBanner(false)
+      } else if (currentScrollY === 0) {
+        setShowBanner(true)
+      }
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
     <div className="relative">
+      <div className={`flex items-center justify-center bg-[#FCA311] px-6 py-2.5 sm:px-3.5 fixed w-full top-0 z-[60] transition-transform duration-300 ${
+        showBanner ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <p className="text-sm leading-6 text-white text-center">
+          <a href="tel:+1-915-433-2937" className="font-semibold hover:text-[#14213D] transition-colors">
+            Call Now: (915) 433-2937
+            <span aria-hidden="true" className="ml-2">&rarr;</span>
+          </a>
+        </p>
+      </div>
       {/* Header */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-white/40 backdrop-blur-xl border-b border-gray-200/30">
+      <header className={`fixed inset-x-0 z-50 bg-white/40 backdrop-blur-xl border-b border-gray-200/30 transition-all duration-300 ${
+        showBanner ? 'top-[41px]' : 'top-0'
+      }`}>
         <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a 
+              href="#home" 
+              onClick={(e) => scrollToSection(e, 'home')}
+              className="-m-1.5 p-1.5"
+            >
               <span className="sr-only">CEO Insurance</span>
               <img 
                 className="h-8 w-auto sm:h-10" 
@@ -153,20 +183,22 @@ export default function LandingPage() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={(e: React.MouseEvent<HTMLButtonElement>) => scrollToSection(e, item.href ? `#${item.href}` : '#')}
-                className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors cursor-pointer bg-transparent border-none"
+              <a 
+                key={item.name} 
+                href={`#${item.href}`}
+                onClick={(e) => scrollToSection(e, item.href)} 
+                className="text-sm font-semibold leading-6 text-[#1e3a6d] hover:text-[#FCA311] transition-colors"
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
-              href="/book"
+              href="tel:+1-915-433-2937"
               className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300 min-w-[120px]"
             >
+              <PhoneIcon className="h-5 w-5 mr-2" aria-hidden="true" />
               Talk To An Expert
             </a>
           </div>
@@ -180,9 +212,15 @@ export default function LandingPage() {
           onClose={() => setMobileMenuOpen(false)}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <Dialog.Panel className={`fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ${
+            showBanner ? 'top-[41px]' : 'top-0'
+          }`}>
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a 
+                href="#home" 
+                onClick={(e) => scrollToSection(e, 'home')}
+                className="-m-1.5 p-1.5"
+              >
                 <span className="sr-only">CEO Insurance</span>
                 <img 
                   className="h-8 w-auto sm:h-10" 
@@ -203,23 +241,25 @@ export default function LandingPage() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <button
+                    <a
                       key={item.name}
-                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                        scrollToSection(e, item.href ? `#${item.href}` : '#')
-                        setMobileMenuOpen(false)
+                      href={`#${item.href}`}
+                      onClick={(e) => {
+                        scrollToSection(e, item.href);
+                        setMobileMenuOpen(false);
                       }}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50 w-full text-left"
                     >
                       {item.name}
-                    </button>
+                    </a>
                   ))}
                 </div>
                 <div className="py-6">
                   <a
-                    href="/book"
+                    href="tel:+1-915-433-2937"
                     className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300"
                   >
+                    <PhoneIcon className="h-5 w-5 mr-2" aria-hidden="true" />
                     Talk To An Expert
                   </a>
                 </div>
@@ -231,7 +271,7 @@ export default function LandingPage() {
 
       <main className="bg-transparent">
         {/* Hero Section */}
-        <div className="relative isolate pt-24">
+        <div id="home" className="relative isolate pt-24">
           <GradientOverlay />
           <div className="mx-auto max-w-7xl px-6 py-8 sm:py-16 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-20">
             <div className="lg:hidden mb-8">
@@ -255,19 +295,18 @@ export default function LandingPage() {
               <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada — we're your trusted local partner for comprehensive executive protection and business insurance solutions.
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-x-6">
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
                 <a
-                  href="/book"
-                  className="rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D]"
-                  style={{ paddingLeft: '4em', paddingRight: '4em' }}
+                  href="/quote"
+                  className="w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center"
                 >
-                  Explore Coverage Options
+                  Get Your Free Quote
                 </a>
-                <a 
-                  href="mailto:gonzate@yahoo.com"
-                  className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311]"
+                <a
+                  href="/quote"
+                  className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
                 >
-                  Email Us <span aria-hidden="true">→</span>
+                  Book A Consultation
                 </a>
               </div>
             </div>
@@ -319,8 +358,8 @@ export default function LandingPage() {
                       </ul>
                       <div className="mt-8">
                         <a
-                          href="/book"
-                          className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center"
+                          href="/quote"
+                          className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center text-center"
                         >
                           Get Your Free Quote
                           <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -429,18 +468,18 @@ export default function LandingPage() {
               <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Be smart and conduct business the right way. Contact us today to find out what it takes to get your business protected!
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
                 <a
-                  href="/book"
-                  className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px]"
+                  href="/quote"
+                  className="w-full flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px] text-center"
                 >
-                  Talk To An Expert
+                  Get Your Free Quote
                 </a>
-                <a 
-                  href="mailto:gonzate@yahoo.com"
-                  className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors"
+                <a
+                  href="/quote"
+                  className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
                 >
-                  Email Us <span aria-hidden="true">→</span>
+                  Book A Consultation
                 </a>
               </div>
             </div>
@@ -449,14 +488,14 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/40 backdrop-blur-xl border-t border-gray-200/30">
+      <footer className="bg-[#FAFAFA]">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-[#001d3d]">
             &copy; {new Date().getFullYear()} CEO Insurance. All rights reserved.
           </div>
           <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-2 sm:space-y-0 mt-4">
             <a href="/privacy-policy" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Privacy Policy</a>
-            <a href="/terms-of-service" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Terms of Service</a>
+            <a href="/terms-of-service" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Terms Of Service</a>
             <a href="/income-disclosure" className="text-sm text-[#001d3d] hover:text-gray-700 transition-colors text-center">Income Disclosure</a>
           </div>
         </div>
