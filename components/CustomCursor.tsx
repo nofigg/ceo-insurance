@@ -1,82 +1,65 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isMoving, setIsMoving] = useState(false)
-  const [target, setTarget] = useState({ x: 0, y: 0 })
   const [isMobile, setIsMobile] = useState(false)
 
-  useEffect(() => {
-    // Check if device is mobile
-    const checkMobile = () => {
-      setIsMobile(
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-        window.matchMedia('(max-width: 768px)').matches
-      )
-    }
-
-    // Check initially and on resize
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-
-    return () => window.removeEventListener('resize', checkMobile)
+  const checkMobile = useCallback(() => {
+    setIsMobile(
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      window.matchMedia('(max-width: 768px)').matches
+    )
   }, [])
 
   useEffect(() => {
-    if (isMobile) return // Don't set up mouse tracking on mobile
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [checkMobile])
+
+  useEffect(() => {
+    if (isMobile) return
 
     let timeoutId: NodeJS.Timeout
-    let animationId: number
+    let isThrottled = false
 
     const updateCursor = (e: MouseEvent) => {
-      const newTarget = { x: e.clientX, y: e.clientY }
-      setTarget(newTarget)
-      setIsMoving(true)
+      if (isThrottled) return
+      isThrottled = true
+
+      requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY })
+        setIsMoving(true)
+        isThrottled = false
+      })
       
       clearTimeout(timeoutId)
-      timeoutId = setTimeout(() => {
-        setIsMoving(false)
-        setPosition(newTarget)
-      }, 100)
-    }
-
-    const animate = () => {
-      if (isMoving) {
-        setPosition(prev => ({
-          x: prev.x + (target.x - prev.x) * 0.35,
-          y: prev.y + (target.y - prev.y) * 0.35
-        }))
-      }
-      animationId = requestAnimationFrame(animate)
+      timeoutId = setTimeout(() => setIsMoving(false), 150)
     }
 
     window.addEventListener('mousemove', updateCursor)
-    animationId = requestAnimationFrame(animate)
-    
     return () => {
       window.removeEventListener('mousemove', updateCursor)
       clearTimeout(timeoutId)
-      cancelAnimationFrame(animationId)
     }
-  }, [isMoving, target, isMobile])
+  }, [isMobile])
 
   if (isMobile) return null
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50 hidden md:block" // Hide on mobile using Tailwind
+      className="pointer-events-none fixed inset-0 z-50 hidden md:block"
       style={{ cursor: 'none' }}
     >
       <div
-        className={`absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#FCA311] transition-transform duration-100 ${
+        className={`absolute h-8 w-8 rounded-full border-2 border-[#FCA311] transition-[transform,opacity] duration-150 ${
           isMoving ? 'scale-75 opacity-50' : 'scale-100 opacity-100'
         }`}
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transition: 'transform 100ms ease-out, opacity 100ms ease-out'
+          transform: `translate(${position.x - 16}px, ${position.y - 16}px)`
         }}
       />
     </div>
