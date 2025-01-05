@@ -9,7 +9,8 @@ import {
   CheckCircleIcon,
   StarIcon,
   ArrowRightIcon,
-
+  MinusIcon,
+  PlusIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
@@ -114,7 +115,6 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonEleme
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isMoving, setIsMoving] = useState(false)
   const [showBanner, setShowBanner] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const router = useRouter()
@@ -138,6 +138,12 @@ export default function LandingPage() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false)
+    }
+  }, [router.asPath])
 
   return (
     <div className="relative">
@@ -210,12 +216,22 @@ export default function LandingPage() {
           open={mobileMenuOpen}
           onClose={() => setMobileMenuOpen(false)}
         >
-          <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out" 
-               aria-hidden="true"
-               onClick={() => setMobileMenuOpen(false)} />
-          <Dialog.Panel className={`fixed inset-x-0 z-50 bg-white transition-[height,opacity] duration-300 ease-in-out overflow-hidden ${
-            showBanner ? 'top-[41px]' : 'top-0'
-          } ${mobileMenuOpen ? 'h-[100vh] opacity-100' : 'h-0 opacity-0'}`}>
+          <div 
+            className={`fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
+              mobileMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+            aria-hidden="true"
+            onClick={() => setMobileMenuOpen(false)} 
+          />
+          <Dialog.Panel 
+            className={`fixed inset-x-0 z-50 bg-white overflow-hidden transition-all duration-300 ease-in-out ${
+              showBanner ? 'top-[41px]' : 'top-0'
+            }`}
+            style={{
+              height: mobileMenuOpen ? '100vh' : '0',
+              opacity: mobileMenuOpen ? 1 : 0,
+            }}
+          >
             <div className="sticky top-0 px-6 py-6 bg-white">
               <div className="flex items-center justify-between">
                 <a 
@@ -270,7 +286,7 @@ export default function LandingPage() {
                 <div className="py-6 space-y-4">
                   <a
                     href="/quote"
-                    className={`w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center block transition-all duration-300 ease-in-out ${
+                    className="w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center block transition-all duration-300 ease-in-out ${
                       mobileMenuOpen 
                         ? 'translate-y-0 opacity-100' 
                         : 'translate-y-4 opacity-0'
@@ -283,11 +299,7 @@ export default function LandingPage() {
                   </a>
                   <a
                     href="https://cal.com/gonzalosandate"
-                    className={`w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center block ${
-                      mobileMenuOpen 
-                        ? 'translate-y-0 opacity-100' 
-                        : 'translate-y-4 opacity-0'
-                    }`}
+                    className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
                     style={{
                       transitionDelay: `${150 + (navigation.length + 2) * 50}ms`
                     }}
@@ -457,9 +469,9 @@ export default function LandingPage() {
                       <span className="text-base font-semibold leading-7 group-hover:text-[#FCA311]">{faq.question}</span>
                       <span className="ml-6 flex h-7 items-center">
                         {openFaq === index ? (
-                          <MinusSmallIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                          <MinusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
                         ) : (
-                          <PlusSmallIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                          <PlusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
                         )}
                       </span>
                     </button>
