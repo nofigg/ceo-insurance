@@ -211,36 +211,43 @@ export default function LandingPage() {
           open={mobileMenuOpen}
           onClose={() => setMobileMenuOpen(false)}
         >
-          <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className={`fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ${
+          <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out" 
+               aria-hidden="true"
+               onClick={() => setMobileMenuOpen(false)} />
+          <Dialog.Panel className={`fixed inset-x-0 z-50 bg-white transition-[height,opacity] duration-300 ease-in-out overflow-hidden ${
             showBanner ? 'top-[41px]' : 'top-0'
-          }`}>
-            <div className="flex items-center justify-between">
-              <a 
-                href="#home" 
-                onClick={(e) => scrollToSection(e, 'home')}
-                className="-m-1.5 p-1.5"
-              >
-                <span className="sr-only">CEO Insurance</span>
-                <img 
-                  className="h-8 w-auto sm:h-10" 
-                  src="/eagle.png" 
-                  alt="CEO Insurance"
-                />
-              </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-[#14213D]"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
+          } ${mobileMenuOpen ? 'h-[100vh] opacity-100' : 'h-0 opacity-0'}`}>
+            <div className="sticky top-0 px-6 py-6 bg-white">
+              <div className="flex items-center justify-between">
+                <a 
+                  href="#home" 
+                  onClick={(e) => {
+                    scrollToSection(e, 'home');
+                    setMobileMenuOpen(false);
+                  }}
+                  className="-m-1.5 p-1.5"
+                >
+                  <span className="sr-only">CEO Insurance</span>
+                  <img 
+                    className="h-8 w-auto sm:h-10" 
+                    src="/eagle.png" 
+                    alt="CEO Insurance"
+                  />
+                </a>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-[#14213D]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
             </div>
-            <div className="mt-6 flow-root">
+            <div className="mt-6 flow-root px-6">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
+                  {navigation.map((item, index) => (
                     <a
                       key={item.name}
                       href={`#${item.href}`}
@@ -248,19 +255,45 @@ export default function LandingPage() {
                         scrollToSection(e, item.href);
                         setMobileMenuOpen(false);
                       }}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50 w-full text-left"
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#001d3d] hover:bg-gray-50 w-full text-left transition-all duration-300 ease-in-out ${
+                        mobileMenuOpen 
+                          ? 'translate-x-0 opacity-100' 
+                          : 'translate-x-4 opacity-0'
+                      }`}
+                      style={{
+                        transitionDelay: `${150 + index * 50}ms`
+                      }}
                     >
                       {item.name}
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 space-y-4">
                   <a
-                    href="tel:+1-915-433-2937"
-                    className="flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300"
+                    href="/quote"
+                    className={`w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center block transition-all duration-300 ease-in-out ${
+                      mobileMenuOpen 
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-4 opacity-0'
+                    }`}
+                    style={{
+                      transitionDelay: `${150 + (navigation.length + 1) * 50}ms`
+                    }}
                   >
-                    <PhoneIcon className="h-5 w-5 mr-2" aria-hidden="true" />
-                    Talk To An Expert
+                    Get Your Free Quote
+                  </a>
+                  <a
+                    href="https://cal.com/gonzalosandate"
+                    className={`w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center block ${
+                      mobileMenuOpen 
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-4 opacity-0'
+                    }`}
+                    style={{
+                      transitionDelay: `${150 + (navigation.length + 2) * 50}ms`
+                    }}
+                  >
+                    Book A Consultation
                   </a>
                 </div>
               </div>
