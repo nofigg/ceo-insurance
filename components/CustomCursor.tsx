@@ -37,7 +37,7 @@ export default function CustomCursor() {
       })
       
       clearTimeout(timeoutId)
-      timeoutId = setTimeout(() => setIsMoving(false), 150)
+      timeoutId = setTimeout(() => setIsMoving(false), 100)
     }
 
     window.addEventListener('mousemove', updateCursor)
@@ -55,7 +55,7 @@ export default function CustomCursor() {
       style={{ cursor: 'none' }}
     >
       <div
-        className={`absolute h-8 w-8 rounded-full border-2 border-[#FCA311] transition-[transform,opacity] duration-150 ${
+        className={`absolute h-8 w-8 rounded-full border-2 border-[#FCA311] transition-[transform,opacity] duration-75 ${
           isMoving ? 'scale-75 opacity-50' : 'scale-100 opacity-100'
         }`}
         style={{
