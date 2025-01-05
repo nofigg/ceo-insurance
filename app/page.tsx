@@ -9,8 +9,7 @@ import {
   CheckCircleIcon,
   StarIcon,
   ArrowRightIcon,
-  MinusSmallIcon,
-  PlusSmallIcon,
+
   PhoneIcon
 } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
