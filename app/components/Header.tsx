@@ -45,23 +45,26 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY) {
         setShowBanner(false)
-      } else if (currentScrollY === 0) {
+      } else {
         setShowBanner(true)
       }
       setLastScrollY(currentScrollY)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [lastScrollY])
 
   useEffect(() => {
     if (mobileMenuOpen) {
       setMobileMenuOpen(false)
     }
-  }, [router.asPath])
+  }, [pathname])
 
   return (
     <header>
