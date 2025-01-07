@@ -152,7 +152,8 @@ export default function LandingPage() {
               <div className="lg:mt-0">
                 <ShieldCheckIcon 
                   className="mx-auto h-32 w-32 sm:h-40 sm:w-40 fill-transparent stroke-[1.5] [stroke:url(#gradient)]" 
-                  aria-hidden="true"
+                  role="img"
+                  aria-label="Shield check icon representing insurance protection"
                 />
                 <svg width="0" height="0">
                   <defs>
@@ -168,7 +169,7 @@ export default function LandingPage() {
         </div>
 
         {/* Services Section */}
-        <section id="services" className="pb-24 sm:pb-32" role="region" aria-labelledby="services-title">
+        <section id="services" className="pb-24 sm:pb-32" aria-labelledby="services-title">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 id="services-title" className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
@@ -179,6 +180,7 @@ export default function LandingPage() {
                 Retain and protect key personnel with top business performers backed by specialized insurance benefit packages against business loss and risk.
               </p>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
               {Object.entries(serviceNames).map(([key, service]) => (
                 <div key={key} className="rounded-xl p-8 shadow-lg border border-[#E5E5E5] hover:shadow-xl transition-all duration-300 hover:border-[#FCA311]">
@@ -186,7 +188,7 @@ export default function LandingPage() {
                     <div>
                       <h3 className="text-2xl font-bold text-[#001d3d]">{service.name}</h3>
                       <p className="mt-2 text-[#001d3d]">{service.description}</p>
-                      <ul className="mt-6 space-y-4">
+                      <ul className="mt-6 space-y-4" aria-label={`Features of ${service.name}`}>
                         {service.features.map((feature, index) => (
                           <li key={index} className="flex items-center">
                             <div className="flex-shrink-0 mr-3">
@@ -200,9 +202,10 @@ export default function LandingPage() {
                         <a
                           href="/quote"
                           className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center text-center"
+                          aria-label={`Get a free quote for ${service.name}`}
                         >
                           Get Your Free Quote
-                          <ArrowRightIcon className="ml-2 h-4 w-4" />
+                          <ArrowRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
