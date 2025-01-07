@@ -53,6 +53,10 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(2em + 80px); /* 80px for nav height + 2em extra space */
+  }
   body {
     @apply bg-background text-foreground;
   }

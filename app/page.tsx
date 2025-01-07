@@ -176,7 +176,7 @@ export default function LandingPage() {
         </div>
 
         {/* Services Section */}
-        <section id="services" className="pb-24 sm:pb-32" aria-labelledby="services-title">
+        <section id="services" className="pt-16 pb-24 sm:pb-32" aria-labelledby="services-title">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 id="services-title" className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
