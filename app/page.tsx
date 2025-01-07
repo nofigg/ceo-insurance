@@ -110,7 +110,7 @@ export default function LandingPage() {
 
       <main>
         {/* Hero Section */}
-        <div id="home" className="relative isolate pt-24">
+        <div id="home" className="relative isolate pt-24" role="banner">
           {/* Background gradient */}
           <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
             <div
@@ -133,14 +133,16 @@ export default function LandingPage() {
                   </p>
                   <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
                     <a
-                      href="#get-started"
-                      className="w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center"
+                      href="/quote"
+                      className="w-full flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px] text-center"
+                      aria-label="Get your free insurance quote"
                     >
                       Get Your Free Quote
                     </a>
                     <a
-                      href="#get-started"
+                      href="https://cal.com/gonzalosandate"
                       className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
+                      aria-label="Schedule a consultation appointment"
                     >
                       Book A Consultation
                     </a>
@@ -166,10 +168,10 @@ export default function LandingPage() {
         </div>
 
         {/* Services Section */}
-        <div id="services" className="pb-24 sm:pb-32">
+        <section id="services" className="pb-24 sm:pb-32" role="region" aria-labelledby="services-title">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
+              <h2 id="services-title" className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
                 Insurance Solutions Tailored for Business Professionals
               </p>
@@ -209,7 +211,7 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Testimonials */}
         <Testimonials />
@@ -256,7 +258,7 @@ export default function LandingPage() {
         </div>
 
         {/* Get Started Section */}
-        <div id="get-started" className="relative isolate bg-gray-50/80 py-24 sm:py-32 overflow-hidden">
+        <section id="get-started" className="relative isolate bg-gray-50/80 py-24 sm:py-32 overflow-hidden" role="region" aria-labelledby="get-started-title">
           <div
             className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl"
             aria-hidden="true"
@@ -271,7 +273,7 @@ export default function LandingPage() {
           </div>
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Get Started</h2>
+              <h2 id="get-started-title" className="text-base font-semibold leading-7 text-[#FCA311]">Get Started</h2>
               <h3 className="text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl mt-2">
                 Take The Next Step
               </h3>
@@ -282,19 +284,21 @@ export default function LandingPage() {
                 <a
                   href="/quote"
                   className="w-full flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px] text-center"
+                  aria-label="Get your free insurance quote"
                 >
                   Get Your Free Quote
                 </a>
                 <a
                   href="https://cal.com/gonzalosandate"
                   className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
+                  aria-label="Schedule a consultation appointment"
                 >
                   Book A Consultation
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />

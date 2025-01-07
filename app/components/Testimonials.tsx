@@ -50,10 +50,10 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="pb-24 sm:pb-32">
+    <section id="testimonials" className="pb-24 sm:pb-32" role="region" aria-labelledby="testimonials-title">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Testimonials</h2>
+          <h2 id="testimonials-title" className="text-base font-semibold leading-7 text-[#FCA311]">Testimonials</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
             Hear From Our Clients
           </p>
@@ -61,25 +61,27 @@ export default function Testimonials() {
 
         <div className="mx-auto max-w-2xl mt-10">
           <div className="relative">
-            <div key={key} className="animate-fade">
-              <div className="flex gap-x-1 text-[#FCA311]">
+            <div key={key} className="animate-fade" role="region" aria-live="polite">
+              <div className="flex gap-x-1 text-[#FCA311]" aria-label={`${testimonials[currentIndex].rating} out of 5 stars`}>
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <StarIcon key={i} className="h-5 w-5" fill="currentColor" aria-hidden="true" />
                 ))}
               </div>
 
-              <blockquote className="mt-4">
-                <p className="text-xl font-semibold text-[#001d3d]">
-                  "{testimonials[currentIndex].quote}"
-                </p>
-              </blockquote>
+              <figure>
+                <blockquote className="mt-4">
+                  <p className="text-xl font-semibold text-[#001d3d]">
+                    "{testimonials[currentIndex].quote}"
+                  </p>
+                </blockquote>
 
-              <div className="mt-8 flex items-center gap-x-4">
-                <div className="text-base">
-                  <div className="font-semibold text-[#001d3d]">{testimonials[currentIndex].author}</div>
-                  <div className="text-[#001d3d]">{testimonials[currentIndex].role}</div>
-                </div>
-              </div>
+                <figcaption className="mt-8 flex items-center gap-x-4">
+                  <div className="text-base">
+                    <div className="font-semibold text-[#001d3d]">{testimonials[currentIndex].author}</div>
+                    <div className="text-[#001d3d]">{testimonials[currentIndex].role}</div>
+                  </div>
+                </figcaption>
+              </figure>
               <div className="flex items-center gap-x-4">
                 <div className="text-base text-[rgba(0,29,61,0.6)]">
                   {testimonials[currentIndex].company}
@@ -87,16 +89,17 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Pagination Dots */}
-            <div className="mt-8 flex justify-center items-center gap-4">
+            {/* Pagination Controls */}
+            <div className="mt-8 flex justify-center items-center gap-4" role="navigation" aria-label="Testimonial Navigation">
               <button
                 onClick={handlePrev}
                 className="rounded-full p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
+                aria-label="Previous testimonial"
               >
                 <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
               </button>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2" role="tablist">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
@@ -106,7 +109,9 @@ export default function Testimonials() {
                         ? 'bg-[#FCA311] w-4' 
                         : 'bg-gray-300 hover:bg-gray-400'
                     }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
+                    role="tab"
+                    aria-selected={index === currentIndex}
+                    aria-label={`View testimonial ${index + 1}`}
                   />
                 ))}
               </div>
@@ -114,6 +119,7 @@ export default function Testimonials() {
               <button
                 onClick={handleNext}
                 className="rounded-full p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
+                aria-label="Next testimonial"
               >
                 <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
               </button>
