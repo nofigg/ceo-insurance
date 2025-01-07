@@ -232,7 +232,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Resources</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
-                Tools for Smart Business Leaders
+                Tools For Business Leaders
               </p>
             </div>
             <div className="mt-10 space-y-6 divide-y divide-gray-900/10">
