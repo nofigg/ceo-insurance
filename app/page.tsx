@@ -166,7 +166,7 @@ export default function LandingPage() {
         </div>
 
         {/* Services Section */}
-        <div id="services" className="py-8 sm:py-12">
+        <div id="services" className="pb-24 sm:pb-32">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
@@ -215,7 +215,7 @@ export default function LandingPage() {
         <Testimonials />
 
         {/* Resources Section */}
-        <div id="resources" className="pt-8 sm:pt-12" style={{ paddingBottom: '8em' }}>
+        <div id="resources" className="pb-24 sm:pb-32">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Resources</h2>
@@ -256,7 +256,7 @@ export default function LandingPage() {
         </div>
 
         {/* Get Started Section */}
-        <div id="get-started" className="relative isolate bg-gray-50/80 py-16 overflow-hidden">
+        <div id="get-started" className="relative isolate bg-gray-50/80 py-24 sm:py-32 overflow-hidden">
           <div
             className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl"
             aria-hidden="true"
@@ -269,11 +269,12 @@ export default function LandingPage() {
               }}
             />
           </div>
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
-                Get Started
-              </h2>
+              <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Get Started</h2>
+              <h3 className="text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl mt-2">
+                Take The Next Step Today
+              </h3>
               <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Be smart and conduct business the right way. Contact us today to find out what it takes to get your business protected!
               </p>
