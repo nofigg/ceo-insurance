@@ -2,14 +2,15 @@
 
 import { useState } from 'react'
 import { 
+  ArrowRightIcon,
   ShieldCheckIcon,
   CheckCircleIcon,
   StarIcon,
   MinusIcon,
   PlusIcon,
-  ArrowRightIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  CheckIcon
 } from '@heroicons/react/24/outline'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -125,6 +126,12 @@ export default function LandingPage() {
             <div className="flex flex-col-reverse lg:flex lg:flex-row lg:items-center lg:justify-between">
               <div className="mt-10 lg:mt-0 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                 <div className="text-center sm:text-left">
+                  <div className="mb-6">
+                    <span className="inline-flex items-center rounded-full bg-[#FCA311]/10 px-3 py-1 text-sm font-medium text-[#FCA311] ring-1 ring-inset ring-[#FCA311]/20">
+                      <CheckCircleIcon className="mr-1.5 h-4 w-4" aria-hidden="true" />
+                      Licensed Professionals
+                    </span>
+                  </div>
                   <h1 className="text-4xl font-bold tracking-tight !leading-tight text-[#001d3d] sm:text-6xl">
                     The Southwest's Leading Life & Benefits Insurance&nbsp;Partner
                   </h1>
@@ -192,7 +199,7 @@ export default function LandingPage() {
                         {service.features.map((feature, index) => (
                           <li key={index} className="flex items-center">
                             <div className="flex-shrink-0 mr-3">
-                              <CheckCircleIcon className="h-5 w-5 text-[#34D399]" aria-hidden="true" />
+                              <CheckCircleIcon className="h-5 w-5 fill-[#34D399] text-white" aria-hidden="true" />
                             </div>
                             <span className="text-[#001d3d]">{feature}</span>
                           </li>
