@@ -121,65 +121,53 @@ export default function LandingPage() {
               }}
             />
           </div>
-          <div className="mx-auto max-w-7xl px-6 py-8 sm:py-16 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-20">
-            <div className="lg:hidden mb-8">
-              <ShieldCheckIcon 
-                className="mx-auto h-32 w-32 sm:h-40 sm:w-40 fill-transparent stroke-[1.5] [stroke:url(#gradient)]" 
-                aria-hidden="true" 
-              />
-              <svg width="0" height="0">
-                <defs>
-                  <linearGradient id="gradient" gradientTransform="rotate(90)">
-                    <stop offset="0%" stopColor="#FCA311" />
-                    <stop offset="100%" stopColor="#FFD700" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-              <div className="text-left">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                  The Southwest's Leading Life & Benefits Insurance Partner
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada — we're your trusted local partner for comprehensive executive protection and business insurance solutions.
-                </p>
+          <div className="mx-auto max-w-6xl px-6 pt-32 sm:pt-48 lg:px-8" style={{ paddingBottom: '8em' }}>
+            <div className="flex flex-col-reverse lg:flex lg:flex-row lg:items-center lg:justify-between">
+              <div className="mt-10 lg:mt-0 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+                <div className="text-center sm:text-left">
+                  <h1 className="text-4xl font-bold tracking-tight !leading-tight text-[#001d3d] sm:text-6xl">
+                    The Southwest's Leading Life & Benefits Insurance&nbsp;Partner
+                  </h1>
+                  <p className="mt-6 text-lg leading-8 text-gray-600">
+                    Discover unmatched insurance and benefit coverage options across the American Southwest. From Arizona to California, Colorado to New Mexico, Texas to Nevada — we're your trusted local partner for comprehensive executive protection and business insurance solutions.
+                  </p>
+                  <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
+                    <a
+                      href="#get-started"
+                      className="w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center"
+                    >
+                      Get Your Free Quote
+                    </a>
+                    <a
+                      href="#get-started"
+                      className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
+                    >
+                      Book A Consultation
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
-                <a
-                  href="/quote"
-                  className="w-full rounded-md bg-[#1e3a6d] py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] text-center"
-                >
-                  Get Your Free Quote
-                </a>
-                <a
-                  href="https://cal.com/gonzalosandate"
-                  className="w-full rounded-md border border-[#1e3a6d] py-2.5 text-sm font-semibold text-[#1e3a6d] hover:bg-[#FCA311] hover:border-[#B68A00] hover:text-white transition-all duration-300 text-center"
-                >
-                  Book A Consultation
-                </a>
+              <div className="lg:mt-0">
+                <ShieldCheckIcon 
+                  className="mx-auto h-32 w-32 sm:h-40 sm:w-40 fill-transparent stroke-[1.5] [stroke:url(#gradient)]" 
+                  aria-hidden="true"
+                />
+                <svg width="0" height="0">
+                  <defs>
+                    <linearGradient id="gradient" gradientTransform="rotate(90)">
+                      <stop offset="0%" stopColor="#FCA311" />
+                      <stop offset="100%" stopColor="#FFD700" />
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
-            </div>
-            <div className="hidden lg:block lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-              <ShieldCheckIcon 
-                className="mx-auto h-48 w-48 fill-transparent stroke-[1.5] [stroke:url(#gradient-desktop)]" 
-                aria-hidden="true" 
-              />
-              <svg width="0" height="0">
-                <defs>
-                  <linearGradient id="gradient-desktop" gradientTransform="rotate(90)">
-                    <stop offset="0%" stopColor="#FCA311" />
-                    <stop offset="100%" stopColor="#FFD700" />
-                  </linearGradient>
-                </defs>
-              </svg>
             </div>
           </div>
         </div>
 
         {/* Services Section */}
         <div id="services" className="py-8 sm:py-12">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
@@ -227,41 +215,42 @@ export default function LandingPage() {
         <Testimonials />
 
         {/* Resources Section */}
-        <div id="resources" className="relative z-10 mb-16">
-          <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-              <h2 className="text-4xl font-semibold tracking-tight text-[#001d3d] sm:text-5xl">
-                Resources
-              </h2>
-              <div className="mt-10 space-y-6 divide-y divide-gray-900/10">
-                {faqs.map((faq, index) => (
-                  <div key={faq.question} className="pt-6 group">
-                    <button
-                      onClick={() => toggleFaq(index)}
-                      className="flex w-full items-start justify-between text-left text-[#001d3d] cursor-pointer hover:text-[#FCA311] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCA311] focus:ring-offset-2 rounded-lg p-2 -m-2"
-                      aria-expanded={openFaq === index}
-                      type="button"
-                    >
-                      <span className="text-base font-semibold leading-7 group-hover:text-[#FCA311]">{faq.question}</span>
-                      <span className="ml-6 flex h-7 items-center">
-                        {openFaq === index ? (
-                          <MinusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
-                        ) : (
-                          <PlusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
-                        )}
-                      </span>
-                    </button>
-                    {openFaq === index && (
-                      <div className="mt-2 pr-12">
-                        <p 
-                          className="text-base leading-7 text-gray-600"
-                          dangerouslySetInnerHTML={{ __html: faq.answer }}
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+        <div id="resources" className="pt-8 sm:pt-12" style={{ paddingBottom: '8em' }}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-base font-semibold leading-7 text-[#FCA311]">Resources</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
+                Tools for Smart Business Leaders
+              </p>
+            </div>
+            <div className="mt-10 space-y-6 divide-y divide-gray-900/10">
+              {faqs.map((faq, index) => (
+                <div key={faq.question} className="pt-6 group">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="flex w-full items-start justify-between text-left text-[#001d3d] cursor-pointer hover:text-[#FCA311] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCA311] focus:ring-offset-2 rounded-lg p-2 -m-2"
+                    aria-expanded={openFaq === index}
+                    type="button"
+                  >
+                    <span className="text-base font-semibold leading-7 group-hover:text-[#FCA311]">{faq.question}</span>
+                    <span className="ml-6 flex h-7 items-center">
+                      {openFaq === index ? (
+                        <MinusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                      ) : (
+                        <PlusIcon className="h-6 w-6 group-hover:text-[#FCA311]" aria-hidden="true" />
+                      )}
+                    </span>
+                  </button>
+                  {openFaq === index && (
+                    <div className="mt-2 pr-12">
+                      <p 
+                        className="text-base leading-7 text-gray-600"
+                        dangerouslySetInnerHTML={{ __html: faq.answer }}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -280,7 +269,7 @@ export default function LandingPage() {
               }}
             />
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
                 Get Started

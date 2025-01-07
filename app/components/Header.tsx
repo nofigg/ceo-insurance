@@ -13,7 +13,6 @@ import { useRouter, usePathname } from 'next/navigation'
 const navigation = [
   { name: 'Options', href: '#services' },
   { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Resources', href: '#resources' },
   { name: 'Get Started', href: '#get-started' },
 ]
 
@@ -77,64 +76,60 @@ export default function Header() {
       </div>
 
       <nav className="flex items-center justify-between p-6 lg:px-8 fixed w-full bg-white z-50 border-b border-gray-200" style={{ top: showBanner ? '41px' : '0' }}>
-        <div className="flex lg:flex-1">
-          <a 
-            href={pathname === '/' ? '#top' : '/'} 
-            className="-m-1.5 p-1.5"
-            onClick={handleLogoClick}
-          >
-            <span className="sr-only">CEO Insurance</span>
-            <img
-              className="h-8 w-auto"
-              src="/eagle.png"
-              alt="CEO Insurance"
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          <button
-            onClick={(e) => scrollToSection(e, '#services')}
-            className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
-          >
-            Options
-          </button>
-          <button
-            onClick={(e) => scrollToSection(e, '#testimonials')}
-            className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
-          >
-            Testimonials
-          </button>
-          <button
-            onClick={(e) => scrollToSection(e, '#resources')}
-            className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
-          >
-            Resources
-          </button>
-          <button
-            onClick={(e) => scrollToSection(e, '#get-started')}
-            className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
-          >
-            Get Started
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
-          <a
-            href="tel:915-433-2937"
-            className="flex items-center gap-2 rounded-md bg-[#1e3a6d] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300"
-          >
-            <PhoneIcon className="h-5 w-5" aria-hidden="true" />
-            Talk To An Expert
-          </a>
+        <div className="mx-auto max-w-6xl w-full flex items-center justify-between">
+          <div className="flex lg:flex-1">
+            <a 
+              href={pathname === '/' ? '#top' : '/'} 
+              className="-m-1.5 p-1.5"
+              onClick={handleLogoClick}
+            >
+              <span className="sr-only">CEO Insurance</span>
+              <img
+                className="h-8 w-auto"
+                src="/eagle.png"
+                alt="CEO Insurance"
+              />
+            </a>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            <button
+              onClick={(e) => scrollToSection(e, '#services')}
+              className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
+            >
+              Options
+            </button>
+            <button
+              onClick={(e) => scrollToSection(e, '#testimonials')}
+              className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={(e) => scrollToSection(e, '#get-started')}
+              className="text-sm font-semibold leading-6 text-[#001d3d] hover:text-[#FCA311] transition-colors duration-300"
+            >
+              Get Started
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
+            <a
+              href="tel:915-433-2937"
+              className="flex items-center gap-2 rounded-md bg-[#1e3a6d] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14213D] transition-all duration-300"
+            >
+              <PhoneIcon className="h-5 w-5" aria-hidden="true" />
+              Talk To An Expert
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -204,16 +199,6 @@ export default function Header() {
                     }}
                   >
                     Testimonials
-                  </a>
-                  <a
-                    href="#resources"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={(e) => {
-                      scrollToSection(e, '#resources');
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    Resources
                   </a>
                   <a
                     href="#get-started"
