@@ -181,7 +181,7 @@ export default function LandingPage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 id="services-title" className="text-base font-semibold leading-7 text-[#FCA311]">Comprehensive Coverage Options</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-[#001d3d] sm:text-4xl">
-                Insurance Solutions Tailored for Business Professionals
+                Insurance Solutions Tailored For Business Professionals
               </p>
               <p className="mt-6 text-lg leading-8 text-[#001d3d]">
                 Retain and protect key personnel with top business performers backed by specialized insurance benefit packages against business loss and risk.
