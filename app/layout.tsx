@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import LoadingProvider from './components/LoadingProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -66,10 +67,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className} h-full`} suppressHydrationWarning={true}>
-        <CustomCursor />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <LoadingProvider>
+          <CustomCursor />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </LoadingProvider>
       </body>
     </html>
   )
