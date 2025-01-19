@@ -140,7 +140,7 @@ export default function LandingPage() {
                   </p>
                   <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
                     <a
-                      href="/quote"
+                      href="https://forms.gle/xbrFo4UFYqUYGrtb6"
                       className="w-full flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px] text-center"
                       aria-label="Get your free insurance quote"
                     >
@@ -207,7 +207,7 @@ export default function LandingPage() {
                       </ul>
                       <div className="mt-8">
                         <a
-                          href="/quote"
+                          href="https://forms.gle/xbrFo4UFYqUYGrtb6"
                           className="text-[#FCA311] hover:text-[#14213D] font-medium inline-flex items-center text-center"
                           aria-label={`Get a free quote for ${service.name}`}
                         >
@@ -292,7 +292,7 @@ export default function LandingPage() {
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-y-4 sm:gap-x-6">
                 <a
-                  href="/quote"
+                  href="https://forms.gle/xbrFo4UFYqUYGrtb6"
                   className="w-full flex items-center justify-center rounded-md bg-[#1e3a6d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#14213D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a6d] transition-all duration-300 min-w-[120px] text-center"
                   aria-label="Get your free insurance quote"
                 >
